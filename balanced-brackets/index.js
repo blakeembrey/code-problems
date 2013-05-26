@@ -1,24 +1,26 @@
 process.stdin.resume();
 process.stdin.setEncoding('utf8');
 
+// Use an object to map sets of brackets to their opposites
 var brackets = {
-  ')': '(',
-  '}': '{',
-  ']': '['
+  '(': ')',
+  '{': '}',
+  '[': ']'
 };
 
+// On each input data chunk, process it using the balance checker
 process.stdin.on('data', function (chunk) {
   var stack = [];
-  // Process each line on input
-  chunk.split('').forEach(function (char) {
-    // Ignore the new lines
-    if (char === '\n') { return; }
-    // Check that the character is the bracket definitions
-    if (brackets[char] && brackets[char] === stack[stack.length - 1]) {
-      return stack.pop();
+  // Trim the chunk input
+  chunk = chunk.trim();
+  // Process every character on input
+  for (var i = 0; i < chunk.length; i++) {
+    if (brackets[stack[stack.length - 1]] === chunk[i]) {
+      stack.pop();
+    } else {
+      stack.push(chunk[i]);
     }
-    stack.push(char);
-  });
+  }
 
   console.log((stack.length ? 'not ' : '') + 'balanced');
 });
