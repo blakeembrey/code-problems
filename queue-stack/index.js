@@ -1,4 +1,5 @@
-var Stack = function() {
+var Stack = function () {
+  // Over simplification of stack implementation using array
   this.storage = [];
 };
 
@@ -20,18 +21,13 @@ Queue.prototype.add = function () {
 };
 
 Queue.prototype.remove = function () {
-  var returns, value;
-
-  while (value = this.stack.remove()) {
-    this.reserve.add(value);
+  // When the reserve stack has nothing in the storage, move everything from the
+  // stack to the reserve stack
+  if (!this.reserve.storage.length) {
+    while (this.stack.storage.length) {
+      this.reserve.add(this.stack.remove());
+    }
   }
 
-  // Remove the last value to return
-  returns = this.reserve.remove();
-
-  while (value = this.reserve.remove()) {
-    this.stack.add(value);
-  }
-
-  return returns;
+  return this.reserve.remove();
 };
