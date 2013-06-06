@@ -41,7 +41,7 @@ If there are certain lines that have no answers (such as the situation in which 
 ## Testing
 
 ```
-cat sample.txt | node index.js
+cat huckleberry-finn.txt | node index.js
 ```
 
 ## Source
