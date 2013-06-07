@@ -1,3 +1,5 @@
+# Stack Machine
+
 A stack machine is a simple system that performs arithmetic operations on an input string of numbers and operators. It contains a stack that can store an arbitrary number of 12-bit unsigned integers. Initially the stack is empty. The machine processes a string of characters in the following way:
 
 1. the characters of the string are processed one by one;
@@ -10,6 +12,7 @@ A stack machine is a simple system that performs arithmetic operations on an inp
 
 For example, given the string "13+62*7+*" the machine will perform the following operations:
 
+```
  character | comment                | stack
 -----------------------------------------------
            |                        | [empty]
@@ -31,6 +34,7 @@ For example, given the string "13+62*7+*" the machine will perform the following
            |                        | 4, 19
 '*'        | perform multiplication |
            |                        | 76
+```
 
 The machine will return 76 as the result as it is the topmost element of its stack.
 
@@ -42,11 +46,11 @@ function solution(S);
 
 that, given a string S consisting of N characters containing input for the stack machine, returns the result the machine would return if given this string. The function should return −1 if the machine would report an error when processing the string.
 
-For example, given string S = "13+62*7+*" the function should return 76, as explained in the example above. Given string S = "11++" the function should return −1.
+For example, given string `S = "13+62*7+*"` the function should return `76`, as explained in the example above. Given string `S = "11++"` the function should return `−1`.
 
 Assume that:
-* the length of S is within the range [0..1,000,000];
-* string S consists only of the following characters: "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+" and/or "*".
+* the length of S is within the range `[0..1,000,000]`;
+* string S consists only of the following characters: `"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+" and/or "*"`.
 
 Complexity:
 * expected worst-case time complexity is O(N);
