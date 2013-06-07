@@ -6,7 +6,7 @@ var getElementsByClassName = function (className) {
     var currentNode, currentClass;
 
     // Loop through all the child nodes
-    for (var i = 0; i < node.childNodes.length; i++) {
+    for (var i = 0, l = node.childNodes.length; i < l; i++) {
       currentNode  = node.childNodes[i];
       currentClass = currentNode.className;
       // Check if the class name exists within the current nodes class
@@ -31,7 +31,7 @@ var getElementsByClassName = function (className) {
 
   // Loop through all the elements checking the class names against the
   // regular expression - when it suceeds just push it into the output array
-  for (var i = 0; i < elements.length; i++) {
+  for (var i = 0, l = elements.length; i < l; i++) {
     if (regex.test(elements[i].className)) {
       found.push(elements[i]);
     }

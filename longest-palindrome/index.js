@@ -8,7 +8,7 @@ var getLongestPalindrome = function (str) {
     palindromes.push(result);
   };
 
-  for (var i = 0; i < str.length; i++) {
+  for (var i = 0, l = str.length; i < l; i++) {
     if (str[i] === str[i - 1]) {
       walkPalindrome(str[i] + str[i - 1], str, i - 1, i);
     } else if (str[i] === str[i + 1]) {
