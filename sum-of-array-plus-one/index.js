@@ -10,8 +10,9 @@ var plusOneSum = function (array) {
   var result = 0;
 
   for (var i = 0; i < array.length; i++) {
-    result += array[i] + 1;
+    result += array[i];
   }
 
-  return result;
+  // if you add one to each then you can just add the array length
+  return result + array.length;
 };
