@@ -14,7 +14,7 @@ process.stdin.on('data', function (chunk) {
   // Trim the chunk input
   chunk = chunk.trim();
   // Process every character on input
-  for (var i = 0; i < chunk.length; i++) {
+  for (var i = 0, l = chunk.length; i < l; i++) {
     if (brackets[stack[stack.length - 1]] === chunk[i]) {
       stack.pop();
     } else {

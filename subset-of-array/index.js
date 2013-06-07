@@ -14,7 +14,7 @@ var isSubsetOf = function (parent, child) {
     return checkChild(a, child[childIndex], true);
   };
 
-  for (var i = 0; i < parent.length; i++) {
+  for (var i = 0, l = parent.length; i < l; i++) {
     if (checkChild(parent[i], child[childIndex])) { return true; }
   }
 

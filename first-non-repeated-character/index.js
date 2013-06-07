@@ -17,10 +17,10 @@ var firstNonRepeatedCharacter = function (string) {
       // Return false to say it's not been repeated
       return false;
     };
-  })();
+  }());
 
   // Interate one extra time past the last character
-  for (var i = 0; i <= string.length; i++) {
+  for (var i = 0, l = string.length; i <= l; i++) {
     if (checkChar(string[i])) { return prevCharacter; }
   }
 };

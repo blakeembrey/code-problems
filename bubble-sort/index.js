@@ -11,7 +11,7 @@ var bubbleSort = function (array) {
     throw new Error('Give me an array');
   }
 
-  for (var i = 0; i < array.length; i++) {
+  for (var i = 0, l = array.length; i < l; i++) {
     if (array[i] > array[i + 1]) {
       switchArray(array, i, i + 1);
       var length = i;
