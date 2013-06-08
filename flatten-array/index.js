@@ -29,3 +29,7 @@ var flatten = function (array) {
 
   return array;
 };
+
+var flatten = function (array) {
+  return array.toString().split(',');
+}
