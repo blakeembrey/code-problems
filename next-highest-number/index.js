@@ -1,17 +1,11 @@
 var nextHighestNumber = function (number) {
   var numberString = ('' + number),
-      length       = numberString.length,
-      currNumber, prevNumber;
+      length       = numberString.length;
 
   while (length--) {
-    currNumber = +numberString[length];
-    // If the current number is smaller than the previous number, switch the
-    // two positions and return the number
-    if (prevNumber > currNumber) {
-      return +(numberString.substr(0, length) + prevNumber + currNumber + numberString.substr(length + 2));
+    if (numberString[length] > numberString[length - 1]) {
+      return +(numberString.substr(0, length - 1) + numberString[length] + numberString[length - 1] + numberString.substr(length + 1));
     }
-    prevNumber = currNumber;
   }
-
   return number;
 };
