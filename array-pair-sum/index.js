@@ -7,9 +7,10 @@ var arrayPairSum = function (k, array) {
   // time complexity of O(n) - the naive solution consists of two for loops
   // which results in a complexity of O(n^2)
   array.forEach(function (number) {
-    hash[number] = (hash[number] || 0) + 1;
-    for (var i = 0; i < (hash[number - k] || 0); i++) {
-      pairs.push([number, number - k]);
+    hash[number] = hash[number] + 1 || 1;
+
+    for (var i = 0; i < (hash[k - number] || 0); i++) {
+      pairs.push([number, k - number]);
     }
   });
 
