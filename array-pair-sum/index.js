@@ -10,9 +10,11 @@ var arrayPairSum = function (k, array) {
     hash[number] = hash[number] + 1 || 1;
 
     for (var i = 0; i < (hash[k - number] || 0); i++) {
-      pairs.push([number, k - number]);
+      if(k != number * 2 || hash[number] > 1) {
+        i += 1;
+        pairs.push([number, k - number]);
+      }
     }
   });
-
   return pairs;
 };
