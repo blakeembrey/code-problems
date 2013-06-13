@@ -1,3 +1,3 @@
-# Basic Javascript Stack
+# Basic Stack
 
-Here is a basic Javascript implementation without using arrays. 
+Implement a basic stack function with the ability to `add` and `remove` values.
