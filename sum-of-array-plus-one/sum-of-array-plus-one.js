@@ -2,7 +2,7 @@
 var plusOneSum = function (array) {
   return array.reduce(function (memo, num) {
     return memo + num;
-  }, 0) + array.length;
+  }, array.length);
 };
 
 // Without array.reduce method isn't much different
