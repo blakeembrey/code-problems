@@ -29,3 +29,10 @@ var flatten = function (array) {
 
   return array;
 };
+
+// Flatten array using ES5 reduce method
+var flatten = function (array) {
+  return array.reduce(function (arr, val) {
+    return arr.concat(Array.isArray(val) ? flatten(val) : val);
+  }, []);
+};
