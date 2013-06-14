@@ -4,14 +4,13 @@ var arrayPairSum = function (k, array) {
       pairs = [];
 
   // Loop through the array once, storing the results in an object for a
-  // time complexity of O(n) - the naive solution consists of two for loops
-  // which results in a complexity of O(n^2)
+  // time complexity of O(n) 
   array.forEach(function (number) {
-    for (var i = 0; i < (hash[k - number] || 0); i++) {
+    if (!(k - number in hash)) {
+      hash[ number ] = k - number;
+    } else {
       pairs.push([number, k - number]);
     }
-
-    hash[number] = hash[number] + 1 || 1;
   });
 
   return pairs;
