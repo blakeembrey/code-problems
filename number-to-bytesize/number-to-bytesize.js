@@ -6,7 +6,7 @@ var prefixes = {
     TB: 12
 };
 
-var numberToBytesize = function(number) {
+var numberToBytesize = function(number, precision) {
     try {
         number = parseFloat(number);
     } catch(e) {
@@ -19,6 +19,7 @@ var numberToBytesize = function(number) {
             target = p;
     });
     
-    var rounded = Math.round((number / Math.pow(10, prefixes[target])) * 100) / 100;
+    var factor = Math.pow(10, precision == null ? 2 : precision);
+    var rounded = Math.round((number / Math.pow(10, prefixes[target])) * factor) / factor;
     return rounded + ' ' + target;
 };
