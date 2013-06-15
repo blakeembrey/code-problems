@@ -1,19 +1,20 @@
-var combineTwoStrings = function (str1, str2, str3) {
-  var pos1 = 0,
-      pos2 = 0;
-      
-  if (str1 + str2 === str3) { return true; }
-  
-  for (var i = 0; i < str3.length; i++) {
-    if (str3[i] === str1[pos1]) {
-      pos1++;
-    } 
-    else if (str3[i] === str2[pos2]) {
-      pos2++;
-    } 
-    else if (str3.length - i - 1 < str1.length - pos1 + str2.length - pos2) {
-      return false;
-    } 
+var combineTwoStrings = function (str1, str2, combined) {
+  // Generate all the posible paths between `str1` and `str2`
+  var paths = {};
+
+  // Check the string lengths are the same to begin
+  if ((str1 + str2).length !== combined.length) {
+    return false;
   }
-  return true;
+
+  // Finding paths is essentially the anagrams solution
+  (function findPath (str1, str2, path) {
+    if (path.length === combined.length) { return paths[path] = true; }
+
+    // Find the next path from the first character of either strings
+    str1 && findPath(str1.substr(1), str2, path + str1.substr(0, 1));
+    str2 && findPath(str1, str2.substr(1), path + str2.substr(0, 1));
+  })(str1, str2, '');
+
+  return combined in paths;
 };
