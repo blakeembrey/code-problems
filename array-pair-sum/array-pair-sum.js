@@ -7,11 +7,14 @@ var arrayPairSum = function (k, array) {
   // time complexity of O(n) - the naive solution consists of two for loops
   // which results in a complexity of O(n^2)
   array.forEach(function (number) {
-    for (var i = 0; i < hash[k - number]; i++) {
+    // Make sure the value in unused and it's a unique pair
+    if (hash[k - number] === false && k - number !== number) {
       pairs.push([number, k - number]);
+      hash[k - number] = true; // Set it to "used"
     }
 
-    hash[number] = hash[number] + 1 || 1;
+    // If the hash value is not true, set the hash to "unused"
+    !hash[k - number] && (hash[number] = false);
   });
 
   return pairs;
