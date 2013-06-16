@@ -1,20 +1,19 @@
-process.stdin.resume();
-process.stdin.setEncoding('utf8');
+// Elegant solution using built-in JavaScript functions
+var parseCSV = function (csv) {
+  return JSON.parse('[' + csv + ']');
+};
 
-var data  = '';
-
-process.stdin.on('data', function (chunk) {
-  data += chunk;
-});
-
-process.stdin.on('end', function () {
-  var csv      = data.trim(),
-      isNumber = false,
+// Crazy parser which was the original solution
+var parseCSV = function (csv) {
+  var isNumber = false,
       isInput  = false,
       curr     = '',
       stack    = [],
+      i        = 0,
       char,
       pushStack;
+
+  csv = csv.trim();
 
   pushStack = function (input) {
     isNumber && (input = +input);
@@ -25,7 +24,7 @@ process.stdin.on('end', function () {
     stack.push(input);
   };
 
-  while (char = csv.charAt(0)) {
+  while (char = csv.charAt(i++)) {
     if (char === '"') {
       isInput = !curr;
     } else if (char === ',') {
@@ -42,13 +41,10 @@ process.stdin.on('end', function () {
       if (isNumber || !isInput) { throw new Error('Unexpected character'); }
       curr += char;
     }
-    csv = csv.substr(1);
   }
 
   // Push the trailing entry
   pushStack(curr);
 
-  stack.forEach(function (output) {
-    console.log(JSON.stringify(output));
-  });
-});
+  return stack;
+};
