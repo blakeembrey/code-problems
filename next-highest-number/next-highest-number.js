@@ -1,11 +1,21 @@
 var nextHighestNumber = function (number) {
-  var numberString = ('' + number),
-      length       = numberString.length;
+    var digits = (number + "").split(""),
+        length = digits.length;
 
-  while (length--) {
-    if (numberString[length] > numberString[length - 1]) {
-      return +(numberString.substr(0, length - 1) + numberString[length] + numberString[length - 1] + numberString.substr(length + 1));
+    while (length--) {
+        if (digits[length] < digits[length + 1]) {
+            var digitsRight = digits.slice(length + 1).sort();
+            for (var i = 0; i < digitsRight.length; ++i) {
+                if (digitsRight[i] > digits[length]) {
+                    digits.splice(length, 0, digitsRight[i]);
+                    digitsRight.splice(i, 1);
+                    break;
+                }
+            }
+            digitsRight.push(digits[length+1]);
+            digits = digits.slice(0, length+1).concat(digitsRight.sort());
+            return digits.join("");
+        }
     }
-  }
-  return number;
-};
+    return number;
+}
