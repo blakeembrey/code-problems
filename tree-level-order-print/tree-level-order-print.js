@@ -1,4 +1,4 @@
-var treeLevelOrderPrint = function (root) {
+module.exports = function (root) {
   // Doing a breadth first search using recursion
   (function walkLevel (children) {
     // Create a new queue for the next level

@@ -1,4 +1,4 @@
-var LinkedList = function (value) {
+var LinkedList = module.exports = function (value) {
   this.value = value;
   this.prev  = this;
   this.next  = this;
@@ -44,9 +44,4 @@ LinkedList.prototype.containsNode = function (value) {
   }
 
   return false;
-};
-
-// Maker function to return instances of linked lists
-var makeLinkedList = function (value) {
-  return new LinkedList(value);
 };

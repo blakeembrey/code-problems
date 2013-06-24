@@ -69,6 +69,6 @@ var spiralTraversal = function (grid, top, left) {
 };
 
 // Generate the traversed output
-var spiral = function (h, w, r, c) {
+module.exports = function (h, w, r, c) {
   return spiralTraversal(generateGrid(w, h), r, c);
 };

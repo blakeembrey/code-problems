@@ -1,4 +1,4 @@
-var removeDuplicates = function (string) {
+module.exports = function (string) {
   var output = '',
       hash   = {};
 

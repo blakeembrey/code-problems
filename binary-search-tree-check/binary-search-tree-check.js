@@ -1,4 +1,4 @@
-var isBinarySearchTree = function isBST (bst) {
+module.exports = function isBST (bst) {
   var test;
 
   // Break the recursion if the left or right node is bigger than the current

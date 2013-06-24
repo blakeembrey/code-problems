@@ -1,4 +1,4 @@
-var wordPositions = function (word, text) {
+module.exports = function (word, text) {
   var positions = [],
       cleanWord;
 
@@ -7,7 +7,7 @@ var wordPositions = function (word, text) {
     var isLetter = function (letter) {
       var charCode = letter.charCodeAt(0);
       return (charCode >= 97 && charCode <= 122) || (charCode >= 65 && charCode <= 90);
-    }
+    };
 
     // If the first character is not a letter, replace it
     if (!isLetter(clean[0])) {

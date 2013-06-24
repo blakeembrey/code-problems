@@ -1,4 +1,4 @@
-var firstNonRepeatedCharacter = function (string) {
+module.exports = function (string) {
   var checkChar,
       prevCharacter;
 
