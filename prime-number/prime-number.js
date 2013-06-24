@@ -1,4 +1,4 @@
-var primeNumber = function (n) {
+module.exports = function (n) {
   if (n < 2) { return false; }
 
   for (var i = 2, l = Math.floor(Math.pow(n, 0.5)); i <= l; i++) {

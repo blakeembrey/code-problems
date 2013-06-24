@@ -1,4 +1,4 @@
-var quickSort = function (array, compare) {
+var quickSort = module.exports = function (array, compare) {
   var lesser  = [],
       greater = [],
       pivot;

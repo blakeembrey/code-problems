@@ -1,4 +1,4 @@
-var searchArray = function (n, array) {
+module.exports = function searchArray (n, array) {
   var index = 0;
 
   // Increment the index by doubling until we pass the search number

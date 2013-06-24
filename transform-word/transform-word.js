@@ -1,4 +1,4 @@
-var transformWord = function (dictionary, start, end) {
+module.exports = function (dictionary, start, end) {
   // Create a function that will return an object which represents a graph structure
   var createGraph = function (dictionary) {
     var graph = {};
