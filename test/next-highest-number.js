@@ -12,6 +12,7 @@ describe('next highest number', function () {
     assert.equal(nextHighestNumber(1112), 1121);
     assert.equal(nextHighestNumber(1243), 1324);
     assert.equal(nextHighestNumber(348932), 349238);
+    assert.equal(nextHighestNumber(15895), 15958);
   });
 
   it('should work when there isn\'t a higher number', function () {
