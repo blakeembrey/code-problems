@@ -6,7 +6,7 @@ This is my repo full of code problems that I have completed prior to or during a
 
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality.
 
-Lint and test your code using any means applicable, in JavaScript this means JSHint and Mocha which is run using Nodejs.
+Please lint and test your code with any means available - currently only JavaScript has tests and linting via Mocha and JSHint.
 
 ## Testing
 
