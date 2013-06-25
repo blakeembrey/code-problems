@@ -1,24 +1,29 @@
-// Implementing recursive solution
-module.exports = function factorial (number) {
-  if(number<=1) return 1;
-  return number*(factorial(number - 1));
-}
+// Recursive function example
+exports.recursive = function factorial (number) {
+  if (number < 2) { return 1; }
 
-// Implementing iterative solution
-module.exports = function (number){
-   var result = 1 ;
-   for(i=1; i<=number; i++){
-     result *= i;
-   }
-   return result;
-}
+  return number * factorial(number - 1);
+};
 
-//Implementing iterative solution 2 (going backwards in loop)
+// Iterative solution
+exports.iterative = function (number) {
+  var result = 1;
 
-module.exports = function (number){
-   var result = 1 ;
-   for(i=number; i>1; i--){
-     result *= i;
-   }
-   return result;
-}
+  for (var i = 1; i <= number; i++) {
+    result *= i;
+  }
+
+  return result;
+};
+
+// Iterative using a reverse loop
+exports.iterativeReverse = function (number) {
+  var result = 1;
+
+  while (number) {
+    result *= number;
+    number -= 1;
+  }
+
+  return result;
+};
