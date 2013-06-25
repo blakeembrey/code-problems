@@ -18,21 +18,39 @@ namespace hotelRoom
                     divisors.Add(i);
             return divisors.ToArray();
         }
-
-        static List<List<int>> getSubsets(int[] divisors) 
+        
+        //get the smallest integer m greater than n,
+        //both n and m have same number of '1' in their binary string
+        static int getNextN(int n){
+            int temp1 = n & (-n);//point out the first '1' in n's binary string form right to left
+            int temp2 = n + temp1;
+            int ret = temp2 | ((n ^ temp2) / temp1) >> 2;
+            return ret;
+        }
+        static List<List<int>> getSubsets(int[] divisors)
         {
             List<List<int>> subsets = new List<List<int>>();
-            foreach (int division in divisors)
-            {
-                foreach (List<int> subset in subsets)
-                {
-                    List<int> pom = new List<int>();
-                    pom.Add(division);
-                    subsets.Add(pom);
+            int num = divisors.Length;
+            for (int i = 1; i <= num; i++) { //get divisors's i element subsets 
+                int beginIdx = (1 << i) - 1;
+                int endIdx = (1 << num) - (1 << (num - i));
+                for (int j = beginIdx; j <= endIdx; ) { //the index of '1' in j's binary string from rigth to left indicates divisors[index] is in the subset
+                    //TODO:output subset
+                    List<int> subset = new List<int>();
+                    int index = 0;
+                    int k = j;
+                    while (k>0) {
+                        if (k % 2 == 1) subset.Add(divisors[index]);
+                        k /= 2;
+                        index++;
+                    }
+                    subsets.Add(subset);
+                    j = getNextN(j);
                 }
             }
             return subsets;
         }
+
 
         static bool isRoom(List<List<int>> subsets, int room)
         {
