@@ -17,7 +17,7 @@ module.exports = function (number){
 
 module.exports = function (number){
    var result = 1 ;
-   for(i=number; i>1; i++){
+   for(i=number; i>1; i--){
      result *= i;
    }
    return result;
