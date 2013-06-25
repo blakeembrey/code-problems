@@ -3,7 +3,7 @@
             int sum = 0;
             foreach (int item in integerArray)
             {
-                sum += item + 1;
+                sum += item;
             }
-            return sum;
+            return sum + integerArray.Length;
         }
