@@ -10,18 +10,18 @@ namespace hotelRoom
 {
     class Program
     {
-        static int[] getDivisors (int number)
-        {
-            List<int> divisors = new List<int>();
+        static List<int> divisors = new List<int>();
+        static int[] getDivisors(int number)
+        {            
             for (int i = number; --i > 0; )
                 if (number % i == 0)
                     divisors.Add(i);
             return divisors.ToArray();
         }
 
-        static List<List<int>> getSubsets(int[] divisors) 
-        {
-            List<List<int>> subsets = new List<List<int>>();
+        static List<List<int>> subsets = new List<List<int>>();
+        static List<List<int>> getSubsets(int[] divisors)
+        {            
             foreach (int division in divisors)
             {
                 foreach (List<int> subset in subsets)
@@ -43,10 +43,10 @@ namespace hotelRoom
             }
             return true;
         }
-        
+
         static void findRoom(int totalRooms)
         {
-            for (int i = 0; ++i < 101; )
+            for (int i = 0; ++i <= totalRooms; )
             {
                 int[] divisors = getDivisors(i);
                 int sum = divisors.Sum();
@@ -64,8 +64,28 @@ namespace hotelRoom
 
         static void Main(string[] args)
         {
-            int input = Convert.ToInt32(Console.ReadLine());
-            findRoom(input);
+            try
+            {
+                Console.WriteLine("Enter the total number of rooms in hotel: ");
+                int input = Convert.ToInt32(Console.ReadLine());
+                findRoom(input);
+            }
+            catch
+            {
+                Console.ForegroundColor = System.ConsoleColor.Red;
+                Console.WriteLine("There was an error. Please try again!");
+                try
+                {
+                    Console.ForegroundColor = System.ConsoleColor.Gray;
+                    int input = Convert.ToInt32(Console.ReadLine());
+                    findRoom(input);
+                }
+                catch
+                {
+                    Console.ForegroundColor = System.ConsoleColor.Red;
+                    Console.WriteLine("Access denied!");
+                }
+            }
         }
     }
 }
