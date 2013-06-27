@@ -1,5 +1,5 @@
 // Accepts a number and an array of multiples
-var sumOfMultiples = function (number, multiples) {
+module.exports = function (number, multiples) {
   return Array.apply(null, new Array(number)).map(function (_, index) {
     return index;
   }).filter(function (number) {

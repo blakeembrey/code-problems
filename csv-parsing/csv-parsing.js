@@ -1,10 +1,10 @@
 // Elegant solution using built-in JavaScript functions
-var parseCSV = function (csv) {
+module.exports = function (csv) {
   return JSON.parse('[' + csv + ']');
 };
 
 // Crazy parser which was the original solution
-var parseCSV = function (csv) {
+module.exports = function (csv) {
   var isNumber = false,
       isInput  = false,
       curr     = '',

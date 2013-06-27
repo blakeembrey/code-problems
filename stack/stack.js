@@ -1,7 +1,7 @@
-var Stack = function () {
+var Stack = module.exports = function () {
   this.head   = null;
   this.length = 0;
-}
+};
 
 Stack.prototype.add = function (value) {
   var node = {

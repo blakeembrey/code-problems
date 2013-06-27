@@ -1,4 +1,4 @@
-var findNumberInArray = function (number, array) {
+module.exports = function (number, array) {
   return (function searchNumber (left, right) {
     var center = left + Math.floor((right - left) / 2);
 

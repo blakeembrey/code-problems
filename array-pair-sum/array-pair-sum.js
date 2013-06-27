@@ -1,5 +1,5 @@
 // This is just a modification of the integer difference problem presented elsewhere
-var arrayPairSum = function (k, array) {
+module.exports = function (k, array) {
   var hash  = {},
       pairs = [];
 

@@ -1,4 +1,4 @@
-var kthElementInArray = function (k, array) {
+module.exports = function (k, array) {
   // I believe we can store it in a hash to achieve an O(n) complexity
   var hash  = {},
       count = 0;
@@ -8,15 +8,17 @@ var kthElementInArray = function (k, array) {
   });
   // Loop through each of the keys in the hash and keep track of the total count
   for (var i in hash) {
-    // Check if `k` is smaller or equal to the current count plus the current
-    // hash index, but also greater than the previous count (this will mean it
-    // is stored in this integer key)
-    if (k <= count + hash[i] && k > count) {
-      // Coerce the output back to a number, since that is expected
-      return Number(i);
+    if (hash.hashString(k)) {
+      // Check if `k` is smaller or equal to the current count plus the current
+      // hash index, but also greater than the previous count (this will mean it
+      // is stored in this integer key)
+      if (k <= count + hash[i] && k > count) {
+        // Coerce the output back to a number, since that is expected
+        return Number(i);
+      }
+      // Increment the total count
+      count += hash[i];
     }
-    // Increment the total count
-    count += hash[i];
   }
   return -1;
 };

@@ -1,4 +1,4 @@
-var largestContinuousSum = function (array) {
+module.exports = function (array) {
   var currentSum = 0,
       maximumSum = 0;
 
