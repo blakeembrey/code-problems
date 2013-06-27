@@ -1,3 +1,3 @@
-var reverseWordsInString = function (string) {
+module.exports = function (string) {
   return string.split(/\s+/g).reverse().join(' ');
 };

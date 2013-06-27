@@ -1,4 +1,4 @@
-function solution (S) {
+module.exports = function (string) {
   var i = 0,
       replacements;
 
@@ -11,13 +11,13 @@ function solution (S) {
     'CC': 'C'
   };
 
-  while (i < S.length) {
-    if (replacements[S.substr(i, 2)]) {
-      S = S.substr(0, i) + replacements[S.substr(i, 2)] + S.substr(i + 2);
+  while (i < string.length) {
+    if (replacements[string.substr(i, 2)]) {
+      string = string.substr(0, i) + replacements[string.substr(i, 2)] + string.substr(i + 2);
     } else {
       i++;
     }
   }
 
-  return S;
-}
+  return string;
+};

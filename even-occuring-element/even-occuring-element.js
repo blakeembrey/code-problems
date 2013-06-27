@@ -1,4 +1,4 @@
-var evenOccuringElement = function (array) {
+module.exports = function (array) {
   var hash = {};
 
   // Loop though the array adding all the elements together in a hash

@@ -1,4 +1,4 @@
-function solution (S) {
+module.exports = function (string) {
   var stack = [];
 
   var requires = function (fn) {
@@ -19,13 +19,13 @@ function solution (S) {
   });
 
   try {
-    for (var i = 0; i < S.length; i++) {
-      if (S[i] === '+') {
+    for (var i = 0; i < string.length; i++) {
+      if (string[i] === '+') {
         stack.push(addition.apply(null, stack.splice(-2)));
-      } else if (S[i] === '*') {
+      } else if (string[i] === '*') {
         stack.push(multiply.apply(null, stack.splice(-2)));
       } else {
-        stack.push(+S[i]);
+        stack.push(+string[i]);
       }
     }
   } catch (e) {
@@ -33,4 +33,4 @@ function solution (S) {
   }
 
   return stack.pop() || -1;
-}
+};

@@ -1,8 +1,8 @@
-var Queue = function () {
+var Queue = module.exports = function () {
   this.head   = null;
   this.tail   = null;
   this.length = 0;
-}
+};
 
 Queue.prototype.add = function (value) {
   var node = {

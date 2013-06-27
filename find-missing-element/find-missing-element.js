@@ -1,7 +1,7 @@
 // Simple solution using a hash to look up numbers from the second array in the
 // first array. When the number doesn't exist in the hash - you know we have
 // found the missing number
-var findMissingElement = function (a, b) {
+module.exports = function (a, b) {
   var hash = {}, i;
 
   for (i = 0; i < b.length; i++) {
@@ -18,7 +18,7 @@ var findMissingElement = function (a, b) {
 
 // Bitwise solution using XOR to cancel each of the corresponding numbers out
 // with eachother until we end up with a number that isn't cancelled out
-var findMissingElement = function (a, b) {
+module.exports = function (a, b) {
   var result = 0;
   a.concat(b).forEach(function (num) {
     result ^= num;
@@ -28,7 +28,7 @@ var findMissingElement = function (a, b) {
 
 // Maybe the simplest solution, but you can very easily add the two arrays and
 // take the result of `b` away from `a` to get the missing number
-var findMissingElement = function (a, b) {
+module.exports = function (a, b) {
   var add = function (a, b) {
     return a + b;
   };
