@@ -1,37 +1,24 @@
 #include <stdlib.h>
-#include <stdio.h>
+#include "stack.h"
 
-typedef struct stack {
-    int value;
-    struct stack *next;
-}Stack;
 
-void add(Stack *head,int value){
-    Stack *node = (Stack*)malloc(sizeof(Stack));
-    node->value = value;
-    if(head == NULL)
-    {
-        head = node;
-        head->next=NULL;
-    }
-    else
-    {
-        head->next = node;
-        head = node;
+void _add(Stack *head,int value){
+    Stack node = (Stack)malloc(sizeof(Stack));
+    if(node !=NULL){
+      node->value = value;
+      node->next = *head;
+      *head = node;
     }
 }
 
-int remove(Stack *head){
+int _remove(Stack *head){
+   int value = -1;
    if(head!=NULL){
-        Stack *top = head;
-        int value = head->value;
-        head = head->next;
+        Stack top = *head;
+        value = (*head)->value;
+        *head = (*head)->next;
         free(top);
-        return value;
+
     }
-    else
-    {
-        printf("The stack is empty!\n");
-        return -1;
-    }
+    return value;
 }
