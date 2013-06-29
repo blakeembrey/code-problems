@@ -1,6 +1,6 @@
 var StackError = module.exports.StackError = function (message) {
-  this.name = 'StackError';
-  this.message = message || '';
+  this.name     = 'StackError';
+  this.message  = message || '';
 };
 
 StackError.prototype = new Error();
