@@ -3,7 +3,7 @@ var Stack = module.exports = function () {
   this.length = 0;
 };
 
-Stack.prototype.add = function (value) {
+Stack.prototype.push = function (value) {
   var node = {
     value: value,
     next: null
@@ -19,7 +19,7 @@ Stack.prototype.add = function (value) {
   return this.length += 1;
 };
 
-Stack.prototype.remove = function () {
+Stack.prototype.pop = function () {
   // If there is no head node, return `undefined`
   if (!this.head) { return; }
 
