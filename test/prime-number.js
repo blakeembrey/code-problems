@@ -1,7 +1,7 @@
 var primeNumber = require('../prime-number/prime-number'),
     assert      = require('assert');
 
-describe('next highest number', function () {
+describe('prime number', function () {
   it('should return true if the number is a prime number', function () {
     assert.equal(primeNumber(2), true);
     assert.equal(primeNumber(859), true);

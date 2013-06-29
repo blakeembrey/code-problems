@@ -1,33 +1,40 @@
-module.exports = function (word, text) {
-  var positions = [],
-      cleanWord;
+module.exports = function (text) {
+  var trie   = {},
+      pos    = 0,
+      active = trie; // Start the active structure as the root trie structure
 
-  cleanWord = function (clean) {
-    // Simple function that will return true or false based on if the character is a letter
-    var isLetter = function (letter) {
-      var charCode = letter.charCodeAt(0);
-      return (charCode >= 97 && charCode <= 122) || (charCode >= 65 && charCode <= 90);
-    };
+  // Suffix a space after the text to make life easier
+  text += ' ';
 
-    // If the first character is not a letter, replace it
-    if (!isLetter(clean[0])) {
-      clean = ' ' + clean.substr(1);
+  // Loop through the input text adding it to the trie structure
+  for (var i = 0; i < text.length; i++) {
+    // When the character is a space, restart
+    if (text[i] === ' ') {
+      // If the current active doesn't equal the root, set the position
+      if (active !== trie) {
+	(active.positions = active.positions || []).push(pos);
+      }
+      // Reset the positions and the active part of the data structure
+      pos    = i;
+      active = trie;
+      continue;
     }
 
-    // If the last character is not a letter, also replace it
-    if (!isLetter(clean[clean.length - 1])) {
-      clean = clean.slice(0, -1) + ' ';
-    }
-
-    // Pad the word if it's shorter than the comparator, e.g. it's the last word
-    return clean + (clean.length === word.length + 2 ? '' : ' ');
-  };
-
-  for (var i = 1; i < text.length - word.length + 1; i++) {
-    if (cleanWord(text.substr(i - 1, word.length + 2)) === (' ' + word + ' ')) {
-      positions.push(i);
-    }
+    // Set the next character in the structure up
+    active[text[i]] = (active[text[i]] || {});
+    active = active[text[i]];
   }
 
-  return positions;
+  // Return a function that accepts a word and looks it up in the trie structure
+  return function (word) {
+    var i      = -1,
+	active = trie;
+
+    while (word[++i]) {
+      if (!active[word[i]]) { return []; }
+      active = active[word[i]];
+    }
+
+    return active.positions;
+  };
 };
