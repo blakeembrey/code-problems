@@ -25,8 +25,7 @@
             return 1;
         }
         else{
-
-            return $number *factorialReverse($number-1);
+            return $number *factorialRecursive($number-1);
         }
     }
 
