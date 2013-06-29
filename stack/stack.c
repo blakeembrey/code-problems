@@ -6,7 +6,7 @@ typedef struct stack {
     struct stack *next;
 }Stack;
 
-void push(Stack *head,int value){
+void add(Stack *head,int value){
     Stack *node = (Stack*)malloc(sizeof(Stack));
     node->value = value;
     if(head == NULL)
@@ -21,7 +21,7 @@ void push(Stack *head,int value){
     }
 }
 
-int pop(Stack *head){
+int remove(Stack *head){
    if(head!=NULL){
         Stack *top = head;
         int value = head->value;
