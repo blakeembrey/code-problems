@@ -1,4 +1,12 @@
-var Stack = module.exports = function () {
+var StackError = module.exports.StackError = function (message) {
+  this.name = 'StackError';
+  this.message = message || '';
+};
+
+StackError.prototype = new Error();
+StackError.prototype.constructor = StackError;
+
+var Stack = module.exports.Stack = function () {
   this.head   = null;
   this.length = 0;
 };
@@ -9,7 +17,7 @@ Stack.prototype.push = function (value) {
     next: null
   };
 
-  if (!this.head) {
+  if (this.head === null) {
     this.head = node;
   } else {
     node.next = this.head;
@@ -21,7 +29,9 @@ Stack.prototype.push = function (value) {
 
 Stack.prototype.pop = function () {
   // If there is no head node, return `undefined`
-  if (!this.head) { return; }
+  if (this.head === null) {
+    throw new StackError('stack empty on pop');
+  }
 
   var node = this.head;
 
