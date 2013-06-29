@@ -31,7 +31,7 @@ module.exports = function mergeSort (array, compare) {
       }
     }
     return result;
-  }
+  };
 
   return merge(mergeSort(left), mergeSort(right));
-}
+};
