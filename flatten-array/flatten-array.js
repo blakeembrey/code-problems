@@ -1,5 +1,5 @@
 // Create a new flattened array
-module.exports = function flatten (input) {
+var flatten = function (input) {
   var output = [];
 
   for (var i = 0; i < input.length; i++) {
@@ -16,7 +16,7 @@ module.exports = function flatten (input) {
 };
 
 // In place array flatten
-module.exports = function (array) {
+var flatten = function (array) {
   var i = 0;
 
   while (i < array.length) {
@@ -31,7 +31,7 @@ module.exports = function (array) {
 };
 
 // Flatten array using ES5 reduce method
-module.exports = function flatten (array) {
+var flatten = function (array) {
   return array.reduce(function (arr, val) {
     return arr.concat(Array.isArray(val) ? flatten(val) : val);
   }, []);

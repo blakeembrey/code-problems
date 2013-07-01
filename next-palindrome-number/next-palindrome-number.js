@@ -1,4 +1,4 @@
-module.exports = function nextPalindrome (number) {
+var nextPalindrome = function (number) {
   var numberString = ('' + number),
       numberLength = numberString.length,
       oddDigits    = numberLength & 1,

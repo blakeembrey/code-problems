@@ -1,4 +1,4 @@
-module.exports = function (array, compare) {
+var bubbleSort = function (array, compare) {
   // Not an array, empty or array of 1 is already sorted
   if (!Array.isArray(array) || array.length < 2) {
     return array;

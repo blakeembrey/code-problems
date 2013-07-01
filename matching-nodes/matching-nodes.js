@@ -1,8 +1,6 @@
-/* global isMatchingNode */
-
 // Make the function accept the node from the first tree and the second tree
 // where we need to find the matching node
-module.exports = function (node, tree) {
+var findMatchingNode = function (node, tree) {
   // Easiest way to optimize this is to store the path from the node to the root
   // and then we can traverse back down the second tree following the same path
   var path  = [node],

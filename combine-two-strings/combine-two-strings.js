@@ -1,4 +1,4 @@
-module.exports = function (str1, str2, combined) {
+var combineTwoStrings = function (str1, str2, combined) {
   // Generate all the posible paths between `str1` and `str2`
   var paths = {};
 

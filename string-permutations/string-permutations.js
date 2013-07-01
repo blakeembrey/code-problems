@@ -1,4 +1,4 @@
-module.exports = function (string) {
+var stringPermutations = function (string) {
   var result = {};
 
   // Using an immediately invoked named function for recursion

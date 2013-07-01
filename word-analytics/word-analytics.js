@@ -43,7 +43,8 @@ isWordChar = function (char) {
 process.stdin.on('data', function (chunk) {
   var word       = '',
       prevSymbol = '\n',
-      char;
+      char,
+      charCode;
 
   for (var i = 0; i < chunk.length; i++) {
     char = chunk[i].toUpperCase();
