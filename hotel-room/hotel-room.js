@@ -1,4 +1,4 @@
-module.exports = function (totalRooms) {
+var findRoom = function (totalRooms) {
   var findDivisors = function (number) {
     var divisors = [],
         iterator = number;

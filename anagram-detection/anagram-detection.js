@@ -61,7 +61,7 @@ var hashString = function (str) {
   }, 1);
 };
 
-module.exports = function (parent, child) {
+var anagramDetection = function (parent, child) {
   var length  = child.length,
       anagram = hashString(child),
       total   = 0;

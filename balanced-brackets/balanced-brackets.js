@@ -6,7 +6,7 @@ var brackets = {
 };
 
 // On each input string, process it using the balance checker
-module.exports = function (string) {
+var balancedBrackets = function (string) {
   var stack = [];
   // Process every character on input
   for (var i = 0; i < string.length; i++) {

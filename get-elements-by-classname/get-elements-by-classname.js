@@ -1,4 +1,4 @@
-module.exports = function (element, className) {
+var getElementsByClassName = function (element, className) {
   var found = [];
 
   (function traverseDom (node) {
@@ -22,7 +22,7 @@ module.exports = function (element, className) {
   return found;
 };
 
-module.exports = function (element, className) {
+var getElementsByClassName = function (element, className) {
   // This function takes an easier approach, using a regular expression and
   // getting all elements straight up using the asterisk selector
   var found    = [],

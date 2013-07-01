@@ -1,4 +1,4 @@
-module.exports = function (str) {
+var largestPalindrome = function (str) {
   var palindromes = [];
 
   var walkPalindrome = function (result, str, leftIndex, rightIndex) {

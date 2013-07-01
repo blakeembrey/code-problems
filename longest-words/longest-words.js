@@ -1,4 +1,4 @@
-module.exports = function (string) {
+var longest_words = function (string) {
   var length = 0,
       // Store the list of longest words in an object to automatically filter
       // for duplicates
