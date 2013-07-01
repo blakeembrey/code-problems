@@ -1,4 +1,4 @@
-module.exports = function (n, array) {
+var findUniquePairs = function (n, array) {
   var hash  = {},
       total = 0;
 

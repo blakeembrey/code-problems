@@ -26,27 +26,27 @@ LinkedList.prototype.prepend = function (value) {
   return node;
 };
 
-module.exports = {
+var medianStream = {
   insert: function (number) {
     if (!this._median) { this._median = new LinkedList(number); return; }
 
     var node = this._median,
-        prevNode;
+	prevNode;
 
     // If the number is greater than the median value, need to insert somewhere
     // after the current median node
     if (number > this._median.value) {
       while (node && node.value < number) {
-        prevNode = node;
-        node     = node.next;
+	prevNode = node;
+	node     = node.next;
       }
       (node || prevNode).append(number);
       // Increment the counter of right nodes
       ++this._right;
     } else {
       while (node && node.value > number) {
-        prevNode = node;
-        node     = node.prev;
+	prevNode = node;
+	node     = node.prev;
       }
       (node || prevNode).prepend(number);
       // Increment the counter of left nodes

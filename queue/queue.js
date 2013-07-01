@@ -1,10 +1,10 @@
-var Queue = module.exports = function () {
+var Queue = function () {
   this.head   = null;
   this.tail   = null;
   this.length = 0;
-};
+}
 
-Queue.prototype.enqueue = function (value) {
+Queue.prototype.add = function (value) {
   var node = {
     value: value,
     next: null
@@ -26,7 +26,7 @@ Queue.prototype.enqueue = function (value) {
   return this.length += 1;
 };
 
-Queue.prototype.dequeue = function () {
+Queue.prototype.remove = function () {
   if (!this.head) { return; }
 
   var node = this.head;
