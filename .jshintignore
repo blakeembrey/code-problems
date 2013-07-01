@@ -1,0 +1,4 @@
+node_modules
+
+# Pretty dodgy JS to keep it so small
+shortest-fizz-buzz

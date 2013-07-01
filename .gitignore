@@ -2,3 +2,4 @@
 .idea
 /out
 /core
+node_modules

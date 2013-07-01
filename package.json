@@ -1,0 +1,34 @@
+{
+  "name": "code-problems",
+  "version": null,
+  "private": true,
+  "description": "Repository full of code problems and common solutions.",
+  "main": null,
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "~1.11.0",
+    "jshint": "~2.1.3"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha && ./node_modules/.bin/jshint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/blakeembrey/code-problems.git"
+  },
+  "keywords": [
+    "code",
+    "problems",
+    "interview",
+    "programming"
+  ],
+  "author": "Blake Embrey",
+  "license": "MIT",
+  "readmeFilename": "Readme.md",
+  "bugs": {
+    "url": "https://github.com/blakeembrey/code-problems/issues"
+  }
+}
