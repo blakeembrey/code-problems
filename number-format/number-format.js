@@ -1,4 +1,4 @@
-var numericString = function (number) {
+exports.iterative = function (number) {
   var string = ('' + number).split('.'),
       length = string[0].length,
       places = 0;
@@ -10,6 +10,14 @@ var numericString = function (number) {
       string[0] = string[0].substr(0, length) + ',' + string[0].substr(length);
     }
   }
+
+  return string.join('.');
+};
+
+exports.regex = function (number) {
+  var string = ('' + number).split('.');
+
+  string[0] = string[0].replace(/(\d)(?=(?:\d{3})+(?:\.|$))/g, '$1,');
 
   return string.join('.');
 };
