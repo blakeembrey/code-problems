@@ -1,16 +1,16 @@
-'use strict';
+module.exports = function (value) {
+  var remaining = value - ~~value,
+      string    = '' + ~~value,
+      length    = string.length,
+      places    = 0;
 
-function formatMoney(value) {
-  var rem = value - ~~value;
-  var arr = String(~~value).split('');
-  var result = [];
-
-  while (arr.length) {
-    var from = Math.max(0, arr.length - 3);
-    result.unshift(arr.splice(from, 3));
+  while (--length) {
+    places += 1;
+    // At every third position we want to insert a comma
+    if (places % 3 === 0) {
+      string = string.substr(0, length) + ',' + string.substr(length);
+    }
   }
 
-  return result.reduce(function (a, b) {
-    return a + ' ' + b.join('');
-  }) + rem.toFixed(2).slice(1);
+  return '$' + string + remaining.toFixed(2).slice(1);
 }
