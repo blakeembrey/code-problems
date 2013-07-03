@@ -8,7 +8,7 @@ Given an integer array, output all pairs that sum up to a specific value k. Cons
 
 ```
 f(10, [3, 4, 5, 6, 7]) // [ [6, 4], [7, 3] ]
-f(8, [3, 4, 5, 4, 4]) // [ [3, 5], [4, 4], [4, 4], [4, 4] ]
+f(8, [3, 4, 5, 4, 4]) // [ [3, 5], [4, 4] ]
 ```
 
 ## Source
