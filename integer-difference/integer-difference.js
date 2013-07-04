@@ -1,4 +1,4 @@
-var findUniquePairs = function (n, array) {
+var integerDifference = function (n, array) {
   var hash  = {},
       total = 0;
 

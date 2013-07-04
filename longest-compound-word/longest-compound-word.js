@@ -8,8 +8,8 @@ module.exports = function (list) {
   // Inserts a word into the prefix tree structure
   insertWord = function (word) {
     var index  = 0,
-	active = prefixes,
-	char;
+      active = prefixes,
+      char;
 
     while (char = word[index++]) {
       active = (active[char] = active[char] || {});
@@ -21,10 +21,10 @@ module.exports = function (list) {
   // Finds the longest prefix we can make using the word
   findPrefixes = function (word) {
     var prefix = '',
-	found  = [],
-	index  = 0,
-	active = prefixes,
-	char;
+        found  = [],
+        index  = 0,
+        active = prefixes,
+        char;
 
     while (char = word[index++]) {
       if (!active[char]) { break; }
@@ -52,22 +52,22 @@ module.exports = function (list) {
 
   possibleWords.forEach(function (possible) {
     var word     = possible[0],
-	prefixes = possible[1],
-	found    = false,
-	findCompoundWord, loopPrefixes;
+        prefixes = possible[1],
+        found    = false,
+        findCompoundWord, loopPrefixes;
 
     findCompoundWord = function (suffix) {
       // Find all future prefixes and continue search
       if (suffix) {
-	return findPrefixes(suffix).forEach(function (prefix) {
-	  !found && loopPrefixes(prefix, suffix);
-	});
+        return findPrefixes(suffix).forEach(function (prefix) {
+          !found && loopPrefixes(prefix, suffix);
+        });
       }
       // If the suffix doesn't exist, it must be because we have found an
       // exact compound word
       if (word.length > longestLength) {
-	longestWords  = [];
-	longestLength = word.length;
+        longestWords  = [];
+        longestLength = word.length;
       }
       // If the word is equal to the length of the current longest word, push it
       // into the result array, then set found to be true so we can break the

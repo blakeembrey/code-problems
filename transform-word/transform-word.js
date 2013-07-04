@@ -8,26 +8,26 @@ var transformWord = function (dictionary, start, end) {
     var isOneCharDifference = function (word1, word2) {
       // If the second word is larger than the first word, reverse the arguments and run again
       if (word2.length > word1.length) {
-	return isOneCharDifference(word2, word1);
+        return isOneCharDifference(word2, word1);
       }
 
       // If the difference in length between the words is greater than one,
       // or the words are identical anyway, it's impossible
       if (word1 === word2 || word2.length < word1.length - 1) {
-	return false;
+        return false;
       }
 
       for (var i = 0; i < word1.length; i++) {
-	// First we check whether replacing the character with the equivelent from
-	// the second word with make the second word
-	if (word1.substr(0, i) + word2[i] + word1.substr(i + 1) === word2) {
-	  return true;
-	}
-	// Next we check if removing a single letter from the first word will
-	// result in the second word
-	if (word1.substr(0, i) + word1.substr(i + 1) === word2) {
-	  return true;
-	}
+        // First we check whether replacing the character with the equivelent from
+        // the second word with make the second word
+        if (word1.substr(0, i) + word2[i] + word1.substr(i + 1) === word2) {
+          return true;
+        }
+        // Next we check if removing a single letter from the first word will
+        // result in the second word
+        if (word1.substr(0, i) + word1.substr(i + 1) === word2) {
+          return true;
+        }
       }
 
       return false;
@@ -38,11 +38,11 @@ var transformWord = function (dictionary, start, end) {
       graph[word] = [];
       // Check all the other words in the graph so far and see if they are connections
       Object.keys(graph).forEach(function (connection) {
-	if (isOneCharDifference(word, connection)) {
-	  graph[word].push(connection);
-	  // Push the word into the connection if it's been created
-	  graph[connection] && graph[connection].push(word);
-	}
+        if (isOneCharDifference(word, connection)) {
+          graph[word].push(connection);
+          // Push the word into the connection if it's been created
+          graph[connection] && graph[connection].push(word);
+        }
       });
     });
 
