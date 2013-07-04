@@ -1,4 +1,4 @@
-# Get Elements by Classname
+# Get Elements by Class Name
 
 Implement the `getElementsByClassName(element, className)` function in Javascript.
 
