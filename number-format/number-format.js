@@ -14,7 +14,7 @@ exports.iterative = function (number) {
   return string.join('.');
 };
 
-exports.regex = function (number) {
+exports.regexp = function (number) {
   var string = ('' + number).split('.');
 
   string[0] = string[0].replace(/(\d)(?=(?:\d{3})+(?:\.|$))/g, '$1,');

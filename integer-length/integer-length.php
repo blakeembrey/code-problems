@@ -1,7 +1,7 @@
 <?php
 
-function IntegerLength($num){
-    return strlen((string) $num);
+function IntegerLength ($num) {
+  return strlen((string) $num);
 }
 
 ?>
