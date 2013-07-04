@@ -1,4 +1,4 @@
-function solution (S) {
+exports.solution = function (S) {
   var stack = [];
 
   var requires = function (fn) {
