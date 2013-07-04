@@ -16,7 +16,11 @@ This is my repo full of code problems that I have completed prior to or during a
 * [Stack](https://github.com/blakeembrey/code-problems/tree/master/stack)
 * [Queue](https://github.com/blakeembrey/code-problems/tree/master/queue)
 * [Linked List](https://github.com/blakeembrey/code-problems/tree/master/linked-list)
-* [Binary Search Tree Check](https://github.com/blakeembrey/code-problems/tree/master/binary-search-tree-check) *Not an implementation, but checks whether an object conforms to an implementation*
+* [Binary Search Tree Check](https://github.com/blakeembrey/code-problems/tree/master/binary-search-tree-check) *Not an implementation, checks for a valid implementation*
+
+### DOM-based Solutions
+
+* [Get Elements By Class Name](https://github.com/blakeembrey/code-problems/tree/master/get-elements-by-class-name)
 
 ### Shortest Code Solutions
 
