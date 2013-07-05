@@ -1,4 +1,4 @@
-var wordPositions = function (word, text) {
+module.exports = function (text, word) {
   var positions = [],
       cleanWord;
 

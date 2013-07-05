@@ -1,4 +1,4 @@
-var primeNumber = function (n) {
+module.exports = function (n) {
   if (n === 2) { return true; }
   if (n < 2 || !(n&1)) { return false; }
 
