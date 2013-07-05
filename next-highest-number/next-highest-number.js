@@ -1,4 +1,4 @@
-var nextHighestNumber = function (number) {
+module.exports = function (number) {
   var numberString = ('' + number),
       length       = numberString.length;
 
