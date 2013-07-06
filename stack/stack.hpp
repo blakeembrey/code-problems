@@ -1,17 +1,17 @@
 #ifndef STACK_HPP_INCLUDED
 #define STACK_HPP_INCLUDED
 
-#include <memory> // std::move
+#include <utility> // std::forward
+#include <memory>  // std::move
 
-template<class T>
+template<typename T>
 class Stack {
 public:
      Stack() : head{nullptr} {};
     ~Stack();
 
-    void add(T const&);
-    void add(T&&);
-
+    template<typename U>
+    void add(U&&);
        T remove();
 
     inline bool empty() const { return head == nullptr; };
@@ -21,14 +21,14 @@ private:
             T data;
         Node* next;
 
-        Node(T const& d, Node* n) : data{d},            next{n} {};
-        Node(T&& d,      Node* n) : data{std::move(d)}, next{n} {};
+        template<typename U>
+        Node(U&& d, Node* n) : data{std::forward<U>(d)}, next{n} {};
     };
 
     Node* head;
 };
 
-template<class T>
+template<typename T>
 Stack<T>::~Stack() {
     // Rewriting functionality of remove here avoids a call to the move
     // constructor for each element in the stack. For code golf, use:
@@ -40,17 +40,13 @@ Stack<T>::~Stack() {
     }
 }
 
-template<class T>
-void Stack<T>::add(T const& t) {
-    head = new Node{t, head};
+template<typename T>
+template<typename U>
+void Stack<T>::add(U&& t) {
+    head = new Node{std::forward<U>(t), head};
 }
 
-template<class T>
-void Stack<T>::add(T&& t) {
-    head = new Node{std::move(t), head};
-}
-
-template<class T>
+template<typename T>
 T Stack<T>::remove() {
     if(empty())
         throw;
