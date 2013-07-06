@@ -3,7 +3,7 @@ TEST_DIR := test/
 
 
 # C++11 tests
-CPP_TESTS   := stack-machine.cpp
+CPP_TESTS   := stack-machine.cpp once.cpp
 CPP_SOURCES := $(addprefix $(TEST_DIR), $(CPP_TESTS))
 
 
