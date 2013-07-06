@@ -1,0 +1,3 @@
+[submodule "test/gtest"]
+	path = test/gtest
+	url = git@github.com:tclamb/gtest.git
