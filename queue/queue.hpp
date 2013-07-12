@@ -1,8 +1,14 @@
 #ifndef STACK_HPP_INCLUDED
 #define STACK_HPP_INCLUDED
 
-#include <utility> // std::forward
-#include <memory>  // std::move
+#include <utility>   // std::forward
+#include <memory>    // std::move
+#include <stdexcept> // std::runtime_error
+
+class empty_queue : public std::runtime_error {
+public:
+    empty_queue(std::string const& what_arg) : std::runtime_error{what_arg} {};
+};
 
 template<typename T>
 class Queue {
@@ -55,7 +61,7 @@ void Queue<T>::enqueue(U&& t) {
 template<typename T>
 T Queue<T>::dequeue() {
     if(empty())
-        throw;
+        throw empty_queue{"Dequeue called on empty queue."};
 
     auto old_head = head;
     auto old_data = std::move(head->data);
