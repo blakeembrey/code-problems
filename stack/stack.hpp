@@ -1,8 +1,14 @@
 #ifndef STACK_HPP_INCLUDED
 #define STACK_HPP_INCLUDED
 
-#include <utility> // std::forward
-#include <memory>  // std::move
+#include <utility>   // std::forward
+#include <memory>    // std::move
+#include <stdexcept> // std::runtime_error
+
+class empty_stack : public std::runtime_error {
+public:
+    empty_stack(std::string const& what_arg) : std::runtime_error{what_arg} {};
+};
 
 template<typename T>
 class Stack {
@@ -49,7 +55,7 @@ void Stack<T>::add(U&& t) {
 template<typename T>
 T Stack<T>::remove() {
     if(empty())
-        throw;
+        throw empty_stack{"Remove called on empty stack."};
 
     auto old_head = head;
     auto old_data = std::move(head->data);

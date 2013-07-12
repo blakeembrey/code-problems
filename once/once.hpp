@@ -9,7 +9,6 @@
 
 struct out_of_calls : std::runtime_error {
     out_of_calls(std::string const& what_arg) : std::runtime_error{what_arg} {};
-    out_of_calls(char        const* what_arg) : std::runtime_error{what_arg} {};
 };
 
 template<typename Functor>
