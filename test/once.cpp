@@ -32,7 +32,7 @@ struct HolderOfTruth {
     }
 };
 
-TEST(Once, VoidLambdaJustOnce) {
+TEST(OnceTest, VoidLambdaJustOnce) {
     int i = 0;
     auto f = once( [&i](){ ++i; } );
     ASSERT_EQ(0, i);
@@ -44,7 +44,7 @@ TEST(Once, VoidLambdaJustOnce) {
     EXPECT_EQ(1, i);
 }
 
-TEST(Once, VoidLambdaManyTimes) {
+TEST(OnceTest, VoidLambdaManyTimes) {
     int i = 0;
     auto f = once( [&i](){ ++i; }, 30);
     ASSERT_EQ(0, i);
@@ -58,7 +58,7 @@ TEST(Once, VoidLambdaManyTimes) {
     EXPECT_EQ(30, i);
 }
 
-TEST(Once, IntReturningLambda) {
+TEST(OnceTest, IntReturningLambda) {
     int i = 10;
     auto f = once( [&i](){ return i; }, 2);
     ASSERT_EQ(10, i);
@@ -70,7 +70,7 @@ TEST(Once, IntReturningLambda) {
     EXPECT_THROW(f(), out_of_calls);
 }
 
-TEST(Once, StringReturningLambda) {
+TEST(OnceTest, StringReturningLambda) {
     auto s = string{"Hi there!"};
     auto f = once( [](){ return string{"Hi there!"}; } );
 
@@ -79,14 +79,14 @@ TEST(Once, StringReturningLambda) {
     EXPECT_THROW(f(), out_of_calls);
 }
 
-TEST(Once, LambdaWithArgs) {
+TEST(OnceTest, LambdaWithArgs) {
     auto f = once( [](int i, string s){ return to_string(i) + " " + s; }, 2);
     EXPECT_EQ("1 time",  f(1, "time"));
     EXPECT_EQ("2 times", f(2, "times"));
     EXPECT_THROW(f(3, "times"), out_of_calls);
 }
 
-TEST(Once, FunctorStruct) {
+TEST(OnceTest, FunctorStruct) {
     auto f = once( multiplies<float>(), 3);
 
     EXPECT_FLOAT_EQ(120.0,  f(2.4, 50.0));
@@ -95,14 +95,14 @@ TEST(Once, FunctorStruct) {
     EXPECT_THROW(f(1.0, 1.0), out_of_calls);
 }
 
-TEST(Once, FunctionPointer) {
+TEST(OnceTest, FunctionPointer) {
     auto f = once( fibonacci, 30 );
     for(int i = 0; i < 30; ++i)
         EXPECT_EQ(fibonacci(i), f(i));
     EXPECT_THROW(f(0), out_of_calls);
 }
 
-TEST(Once, MemberFunctions) {
+TEST(OnceTest, MemberFunctions) {
     auto f = once(&HolderOfTruth::getTruth, 6);
     auto g = once(&HolderOfTruth::setTruth, 3);
 

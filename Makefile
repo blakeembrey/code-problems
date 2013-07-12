@@ -3,7 +3,7 @@ TEST_DIR := test/
 
 
 # C++11 tests
-CPP_TESTS   := stack-machine.cpp once.cpp
+CPP_TESTS   := stack-machine.cpp once.cpp stack.cpp queue.cpp
 CPP_SOURCES := $(addprefix $(TEST_DIR), $(CPP_TESTS))
 
 
@@ -32,12 +32,14 @@ all: .IGNORE
 
 # C++ build rules
 FUSED_GTEST_SOURCES := $(TEST_DIR)gtest/gtest-all.cc $(TEST_DIR)gtest/gtest_main.cc
+OTHER_SOURCES := $(TEST_DIR)common.cpp
 CXXFLAGS += -DGTEST_HAS_PTHREAD=0 -DGTEST_HAS_TR1_TUPLE=0 -g
 CPP_OBJECTS := $(CPP_SOURCES:.cpp=.o)
 FUSED_GTEST_OBJECTS := $(FUSED_GTEST_SOURCES:.cc=.o)
-cpp: hasGTest $(FUSED_GTEST_OBJECTS) $(CPP_OBJECTS)
+OTHER_OBJECTS := $(OTHER_SOURCES:.cpp=.o)
+cpp: hasGTest $(FUSED_GTEST_OBJECTS) $(CPP_OBJECTS) $(OTHER_OBJECTS)
 	@$(CXX) $(LDFLAGS) \
-		$(CPP_OBJECTS) $(FUSED_GTEST_OBJECTS) \
+		$(CPP_OBJECTS) $(FUSED_GTEST_OBJECTS) $(OTHER_OBJECTS)\
 		-o cpp
 	@./cpp
 	@rm -rf cpp
