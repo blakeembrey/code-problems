@@ -23,5 +23,4 @@ var isBinarySeachTree = function(bst) {
     return true;
 
   })(bst);
-
 };
