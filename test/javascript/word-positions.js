@@ -1,4 +1,4 @@
-var wordPositions = require('../word-positions/word-positions'),
+var wordPositions = require('../../word-positions/word-positions'),
     assert        = require('assert');
 
 describe('word positions', function () {

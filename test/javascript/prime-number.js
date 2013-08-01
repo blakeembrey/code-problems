@@ -1,4 +1,4 @@
-var primeNumber = require('../prime-number/prime-number'),
+var primeNumber = require('../../prime-number/prime-number'),
     assert      = require('assert');
 
 describe('prime number', function () {

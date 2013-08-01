@@ -1,4 +1,4 @@
-var stackMachine = require('../stack-machine/stack-machine'),
+var stackMachine = require('../../stack-machine/stack-machine'),
     assert       = require('assert');
 
 describe('stackMachine', function () {

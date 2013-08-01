@@ -13,7 +13,7 @@
     "jshint": "~2.1.3"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha && ./node_modules/.bin/jshint ."
+    "test": "./node_modules/.bin/mocha test/javascript && ./node_modules/.bin/jshint ."
   },
   "repository": {
     "type": "git",

@@ -1,4 +1,4 @@
-var factorial = require('../factorial/factorial'),
+var factorial = require('../../factorial/factorial'),
     assert    = require('assert');
 
 describe('factorial', function () {
