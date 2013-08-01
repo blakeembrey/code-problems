@@ -3,16 +3,16 @@ def quick_sort(array) # quick sort algorithm
 end
 
 def self.sort!(array)
-  quick(array, 0, array.size - 1)
+  process(array, 0, array.size - 1)
 end
 
 private
 
-def self.quick(array, left, right)
+def self.process(array, left, right)
   if left < right
     pivot = partition(array, left, right)
-    quick(array, left, pivot - 1)
-    quick(array, pivot + 1, right)
+    process(array, left, pivot - 1)
+    process(array, pivot + 1, right)
   end
   array
 end
