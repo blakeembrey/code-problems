@@ -1,10 +1,11 @@
 SHELL := /bin/sh
-TEST_DIR := test/
+TEST_DIR := test
+GTEST_DIR := $(TEST_DIR)/cpp/gtest
 
 
 # C++11 tests
 CPP_TESTS   := stack-machine.cpp once.cpp stack.cpp queue.cpp spiral.cpp
-CPP_SOURCES := $(addprefix $(TEST_DIR), $(CPP_TESTS))
+CPP_SOURCES := $(addprefix $(TEST_DIR)/cpp/, $(CPP_TESTS))
 
 
 # OS specific settings
@@ -31,8 +32,8 @@ all: .IGNORE
 
 
 # C++ build rules
-FUSED_GTEST_SOURCES := $(TEST_DIR)gtest/gtest-all.cc $(TEST_DIR)gtest/gtest_main.cc
-OTHER_SOURCES := $(TEST_DIR)common.cpp
+FUSED_GTEST_SOURCES := $(GTEST_DIR)/gtest-all.cc $(GTEST_DIR)/gtest_main.cc
+OTHER_SOURCES := $(TEST_DIR)/cpp/common.cpp
 CXXFLAGS += -DGTEST_HAS_PTHREAD=0 -DGTEST_HAS_TR1_TUPLE=0 -g
 CPP_OBJECTS := $(CPP_SOURCES:.cpp=.o)
 FUSED_GTEST_OBJECTS := $(FUSED_GTEST_SOURCES:.cc=.o)
@@ -44,12 +45,12 @@ cpp: hasGTest $(FUSED_GTEST_OBJECTS) $(CPP_OBJECTS) $(OTHER_OBJECTS)
 	@./cpp
 	@rm -rf cpp
 hasGTest:
-	@if [ ! -f $(TEST_DIR)gtest/gtest.h ]; then \
-		git submodule update --init -f $(TEST_DIR)gtest; \
-	 fi
+	@if [ ! -f $(GTEST_DIR)/gtest.h ]; then \
+		git submodule update --init -f $(GTEST_DIR); \
+	fi
 .cpp.o:
 	@$(CXX) $(CXXFLAGS) -c $< -o $@
-.cc.o: 
+.cc.o:
 	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 

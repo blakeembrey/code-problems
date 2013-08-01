@@ -1,9 +1,9 @@
 #include "gtest/gtest.h"
 #include "common.hpp"
 
-#include "../queue/queue.hpp"
+#include "../../stack/stack.hpp"
 
-class QueueTest : public::testing::Test {
+class StackTest : public::testing::Test {
 protected:
     virtual void SetUp() {
         nextId = 0;
@@ -11,21 +11,21 @@ protected:
     }
 };
 
-TEST_F(QueueTest, BasicTest) {
-    Queue<int> s;
-    s.enqueue(4);
-    s.enqueue(7);
-    s.enqueue(23);
-    EXPECT_EQ(4, s.dequeue());
-    EXPECT_EQ(7,  s.dequeue());
-    EXPECT_EQ(23,  s.dequeue());
-    EXPECT_THROW(s.dequeue(), empty_queue);
+TEST_F(StackTest, BasicTest) {
+    Stack<int> s;
+    s.add(4);
+    s.add(7);
+    s.add(23);
+    EXPECT_EQ(23, s.remove());
+    EXPECT_EQ(7, s.remove());
+    EXPECT_EQ(4, s.remove());
+    EXPECT_THROW(s.remove(), empty_stack);
 }
 
-TEST_F(QueueTest, PassingRvalueCallsMoveConstructorOnce) {
+TEST_F(StackTest, PassingRvalueCallsMoveConstructorOnce) {
     {
-        Queue<eventLogger> s;
-        s.enqueue(eventLogger{});
+        Stack<eventLogger> s;
+        s.add(eventLogger{});
     }
     ASSERT_EQ(eventLog.size(), 4);
 
@@ -51,11 +51,11 @@ TEST_F(QueueTest, PassingRvalueCallsMoveConstructorOnce) {
     EXPECT_EQ(Event::DestructorCalled, get<1>(e));
 }
 
-TEST_F(QueueTest, DequeueReturnsRvalue) {
+TEST_F(StackTest, RemoveReturnsRvalue) {
     {
-        Queue<eventLogger> s;
-        s.enqueue(eventLogger{});
-        s.dequeue();
+        Stack<eventLogger> s;
+        s.add(eventLogger{});
+        s.remove();
     }
     ASSERT_EQ(eventLog.size(), 6);
 
@@ -91,11 +91,11 @@ TEST_F(QueueTest, DequeueReturnsRvalue) {
     EXPECT_EQ(Event::DestructorCalled, get<1>(e));
 }
 
-TEST_F(QueueTest, PassingReferenceCallsCopyConstructorOnce) {
+TEST_F(StackTest, PassingReferenceCallsCopyConstructorOnce) {
     {
         eventLogger l;
-        Queue<eventLogger> s;
-        s.enqueue(l);
+        Stack<eventLogger> s;
+        s.add(l);
     }
     ASSERT_EQ(eventLog.size(), 4);
 
@@ -121,12 +121,12 @@ TEST_F(QueueTest, PassingReferenceCallsCopyConstructorOnce) {
     EXPECT_EQ(Event::DestructorCalled, get<1>(e));
 }
 
-TEST_F(QueueTest, DequeueOfCopyReturnsRvalueOfCopy) {
+TEST_F(StackTest, RemoveOfCopyReturnsRvalueOfCopy) {
     {
-        Queue<eventLogger> s;
+        Stack<eventLogger> s;
         eventLogger l;
-        s.enqueue(l);
-        s.dequeue();
+        s.add(l);
+        s.remove();
     }
     ASSERT_EQ(eventLog.size(), 6);
 

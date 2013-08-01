@@ -1,4 +1,4 @@
-var nextHighestNumber = require('../next-highest-number/next-highest-number'),
+var nextHighestNumber = require('../../next-highest-number/next-highest-number'),
     assert            = require('assert');
 
 describe('next highest number', function () {

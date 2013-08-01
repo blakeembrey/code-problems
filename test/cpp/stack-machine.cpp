@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 
-#include "../stack-machine/stack-machine.hpp"
+#include "../../stack-machine/stack-machine.hpp"
 #include <string> // std::to_string, std::string
 
 TEST(StackMachineTest, BasicTest) {
@@ -35,7 +35,7 @@ TEST(StackMachineTest, DISABLED_LengthTest) {
     // Tests solution with a 128*1024*1024 char long input string (128 MB).
     // Since this requies _at least_ a 16-bit integer for each number, this
     // test allocates at least a total of 384 MB of memory. On 32-bit systems,
-    // this will likely end up allocating around 640 MB of memory, and on 
+    // this will likely end up allocating around 640 MB of memory, and on
     // 64-bit systems, around 1152 MB.
     constexpr auto length = std::size_t{128*1024*1024};
     auto longInput = std::string(length, '1');

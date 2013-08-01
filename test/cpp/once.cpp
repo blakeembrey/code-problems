@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 
-#include "../once/once.hpp"
+#include "../../once/once.hpp"
 #include <string>
 #include <functional>
 using std::string;
@@ -66,7 +66,7 @@ TEST(OnceTest, IntReturningLambda) {
     EXPECT_EQ(10, f());
     i = 13;
     EXPECT_EQ(13, f());
-    
+
     EXPECT_THROW(f(), out_of_calls);
 }
 
