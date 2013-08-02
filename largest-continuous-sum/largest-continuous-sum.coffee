@@ -1,7 +1,7 @@
 largestContinuousSum = (array) ->
   return if !array or !array.length
 
-  currentSum = maximumSum = array.unshift()
+  currentSum = maximumSum = array.shift()
 
   # Checks the array of sums and compares them
   array.forEach (num) ->
