@@ -1,16 +1,17 @@
 var stackMachine = require('../../stack-machine/stack-machine'),
     assert       = require('assert');
 
-describe('stackMachine', function () {
+describe('stack machine', function () {
   it('should correctly evaluate the two example problems', function () {
     assert.equal(stackMachine('13+62*7+*'), 76);
     assert.equal(stackMachine('11++'),      -1);
   });
 
   it('should return the top number from the stack', function() {
-    for(var i = 0; i < 10; i++)
+    for (var i = 0; i < 10; i++) {
       assert.equal(stackMachine(i.toString()), i,
         stackMachine(i.toString()) + ' == ' + i + '\n     Input: ' + i.toString());
+    }
     assert.equal(stackMachine('0123456789'),   9);
     assert.equal(stackMachine('123456*****0'), 0);
   });
