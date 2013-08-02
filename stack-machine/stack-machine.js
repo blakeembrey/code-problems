@@ -21,9 +21,9 @@ module.exports = function (S) {
   try {
     for (var i = 0; i < S.length; i++) {
       if (S[i] === '+') {
-        stack.push(addition.apply(null, stack.splice(-2)));
+        stack.push(addition.call(null, stack.pop(), stack.pop()));
       } else if (S[i] === '*') {
-        stack.push(multiply.apply(null, stack.splice(-2)));
+        stack.push(multiply.call(null, stack.pop(), stack.pop()));
       } else {
         stack.push(+S[i]);
       }
@@ -32,5 +32,5 @@ module.exports = function (S) {
     return -1;
   }
 
-  return stack.pop() || -1;
+  return stack.length ? stack.pop() : -1;
 }
