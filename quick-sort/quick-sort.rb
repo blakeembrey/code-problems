@@ -1,8 +1,10 @@
+# NOTE: Ruby has a built in sorting method, `sort!`, that actually uses a quick-sort process; this just demonstrates an implementation.
+
 def quick_sort(array) # quick sort algorithm
-  array.sort!
+  array.quick_sort!
 end
 
-def self.sort!(array)
+def self.quick_sort!(array)
   process(array, 0, array.size - 1)
 end
 
