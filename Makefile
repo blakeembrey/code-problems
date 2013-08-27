@@ -1,5 +1,5 @@
-SHELL := /bin/sh
-TEST_DIR := test
+SHELL     := /bin/sh
+TEST_DIR  := tests
 GTEST_DIR := $(TEST_DIR)/cpp/gtest
 
 
@@ -32,8 +32,8 @@ all: .IGNORE
 
 
 # C++ build rules
+OTHER_SOURCES       := $(TEST_DIR)/cpp/common.cpp
 FUSED_GTEST_SOURCES := $(GTEST_DIR)/gtest-all.cc $(GTEST_DIR)/gtest_main.cc
-OTHER_SOURCES := $(TEST_DIR)/cpp/common.cpp
 CXXFLAGS += -DGTEST_HAS_PTHREAD=0 -DGTEST_HAS_TR1_TUPLE=0 -g
 CPP_OBJECTS := $(CPP_SOURCES:.cpp=.o)
 FUSED_GTEST_OBJECTS := $(FUSED_GTEST_SOURCES:.cc=.o)
