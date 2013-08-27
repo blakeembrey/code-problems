@@ -13,7 +13,8 @@
     "jshint": "~2.1.3"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha test/javascript && ./node_modules/.bin/jshint ."
+    "lint": "./node_modules/.bin/jshint .",
+    "test": "npm run lint && ./node_modules/.bin/mocha tests/javascript"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,7 @@
   ],
   "author": "Blake Embrey",
   "license": "MIT",
-  "readmeFilename": "Readme.md",
+  "readmeFilename": "README.md",
   "bugs": {
     "url": "https://github.com/blakeembrey/code-problems/issues"
   }
