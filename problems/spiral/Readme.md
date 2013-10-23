@@ -1,6 +1,6 @@
 # Spiral
 
-Write a function that accepts four arguments. The first two arguments are the size of the grid (*h x w*), filled with ascending integers from left to right, top to bottom, starting from 1. The next two arguments are is the starting positions, the row (*r*) and column (*c*).
+Write a function that accepts four arguments. The first two arguments are the size of the grid (*h x w*), filled with ascending integers from left to right, top to bottom, starting from 1. The next two arguments are the starting positions, the row (*r*) and column (*c*).
 
 Return an array of integers obtained by spiralling outward anti-clockwise from the *r* and *c*, starting upward.
 
