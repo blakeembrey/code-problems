@@ -19,16 +19,16 @@ public class Spiral {
 	      nextCoordinate[0] = row;
 	      nextCoordinate[1] = column;
 	      switch (currentDirection) {
-	          case UP: // move up a row
+	          case UP: 
 	              nextCoordinate[0] -= 1; 
 	              break;
-	          case LEFT: // move left a column
+	          case LEFT: 
 	              nextCoordinate[1] -= 1;
 	              break;
-	          case DOWN: // move down a row
+	          case DOWN: 
 	              nextCoordinate[0] += 1;
 	              break;
-	          case RIGHT: // move right a column
+	          case RIGHT:
 	              nextCoordinate[1] += 1;
 	              break;
 	      }
