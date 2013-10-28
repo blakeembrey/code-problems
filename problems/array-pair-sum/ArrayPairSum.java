@@ -5,21 +5,6 @@ import java.util.HashMap;
 
 public class ArrayPairSum {
 	
-	public ArrayList<int[]> getAllSumPairsNaive(int k, int[] input) {
-		ArrayList<int[]> allSumPairs = new ArrayList<int[]>();
-		for (int i = 0; i < input.length; ++i) {
-			for (int j = i; j < input.length; ++j) {
-				if (input[i] + input[j] == k && i != j) {
-					int[] sumPair = new int[2];
-					sumPair[0] = input[i];
-					sumPair[1] = input[j];
-					allSumPairs.add(sumPair);
-				}
-			}
-		}
-		return allSumPairs;
-	}
-	
 	public ArrayList<int[]> getAllSumPairs(int k, int[] input) {
 		ArrayList<int[]> allSumPairs = new ArrayList<int[]>();
 		HashMap<Integer, Boolean> usedNumbers = new HashMap<Integer, Boolean>();
