@@ -69,9 +69,8 @@ exports.matrix = function (n) {
 };
 
 // Implements closed form solution.
-exports.closedForm = (function () {
-  var phi = (1 + Math.sqrt(5)) / 2;
+exports.closedForm = (function (phi) {
   return function (n) {
     return Math.floor(Math.pow(phi, n) / Math.sqrt(5) + 0.5);
   };
-}());
+}((1 + Math.sqrt(5)) / 2));
