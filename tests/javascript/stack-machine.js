@@ -1,5 +1,5 @@
 var assert       = require('assert');
-var stackMachine = require('../../problems/stack-machine/stack-machine');
+var stackMachine = require('../../solutions/javascript/stack-machine');
 
 describe('stack machine', function () {
   it('should correctly evaluate the two example problems', function () {

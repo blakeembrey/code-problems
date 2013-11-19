@@ -1,5 +1,5 @@
 var assert      = require('assert');
-var primeNumber = require('../../problems/prime-number/prime-number');
+var primeNumber = require('../../solutions/javascript/prime-number');
 
 describe('prime number', function () {
   it('should return true if the number is a prime number', function () {

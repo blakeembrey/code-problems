@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 
-#include "../../problems/stack-machine/stack-machine.hpp"
+#include "../../solutions/cpp/stack-machine.hpp"
 #include <string> // std::to_string, std::string
 
 TEST(StackMachineTest, BasicTest) {

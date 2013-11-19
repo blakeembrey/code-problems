@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 
-#include "../../problems/once/once.hpp"
+#include "../../solutions/cpp/once.hpp"
 #include <string>
 #include <functional>
 using std::string;
