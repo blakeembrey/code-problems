@@ -1,5 +1,5 @@
 var assert        = require('assert');
-var wordPositions = require('../../problems/word-positions/word-positions');
+var wordPositions = require('../../solutions/javascript/word-positions');
 
 describe('word positions', function () {
   it('should return an array of word positions', function () {

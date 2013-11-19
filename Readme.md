@@ -1,6 +1,6 @@
 # Code Problems
 
-This is my repo full of code problems that I have completed prior to or during an interview, as well as general problem snippets. I hope that all these problems (and solutions) are useful to others for practice and review. Feel free to contribute any solutions and optimisations, given they are not premature optimisation or sacrificing readability for the sake of a small performance boost. Please add your own problems that you find as well, as I would love to see them.
+This is my repo full of code problems that I have completed prior to or during an interview, as well as general problem snippets. I hope that all these problems (and solutions) are useful to others for practice and review. Feel free to contribute any solutions and optimisations, and add your own problems that you find as well, as I would love to see them.
 
 ## Problems
 
@@ -18,15 +18,15 @@ This is my repo full of code problems that I have completed prior to or during a
 * [Linked List](https://github.com/blakeembrey/code-problems/tree/master/problems/linked-list)
 * [Binary Search Tree Check](https://github.com/blakeembrey/code-problems/tree/master/problems/binary-search-tree-check) *Not an implementation, checks for a valid implementation*
 
-### DOM-based Solutions
+### DOM Problems
 
 * [Get Elements By Class Name](https://github.com/blakeembrey/code-problems/tree/master/problems/get-elements-by-class-name)
 
-### Shortest Code Solutions
+### Shortest Code Problems
 
 * [Shortest Fizz Buzz](https://github.com/blakeembrey/code-problems/tree/master/problems/shortest-fizz-buzz)
 
-## Testing
+## Tests
 
 ```sh
 npm install # Installs `mocha` and any other dependencies needed to run

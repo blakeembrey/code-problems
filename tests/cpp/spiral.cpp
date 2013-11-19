@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 
-#include "../../problems/spiral/spiral.hpp"
+#include "../../solutions/cpp/spiral.hpp"
 
 TEST(SpiralTest, BasicTest) {
     typedef std::vector<unsigned int> v;

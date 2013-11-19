@@ -1,5 +1,5 @@
 var assert   = require('assert');
-var solution = require('../../problems/largest-continuous-sum/largest-continuous-sum');
+var solution = require('../../solutions/javascript/largest-continuous-sum');
 
 describe('largest continuous sum', function () {
   it('should be able to get the largest sum', function () {

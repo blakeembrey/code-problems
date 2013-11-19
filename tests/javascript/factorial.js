@@ -1,5 +1,5 @@
 var assert    = require('assert');
-var factorial = require('../../problems/factorial/factorial');
+var factorial = require('../../solutions/javascript/factorial');
 
 describe('factorial', function () {
   // We have multiple factorial solutions to test, so loop through them

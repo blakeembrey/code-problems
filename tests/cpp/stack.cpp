@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 #include "common.hpp"
 
-#include "../../problems/stack/stack.hpp"
+#include "../../solutions/cpp/stack.hpp"
 
 class StackTest : public::testing::Test {
 protected:
