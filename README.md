@@ -22,7 +22,7 @@ This is my repo full of code problems that I have completed prior to or during a
 
 ## Testing
 Change into the directory of the cloned project and execute the following commands w/ npm:
-```
+```bash
 npm update # Installs all of the dependencies to the working directory
 npm test # Runs the testing scripts
 ```
