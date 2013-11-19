@@ -12,7 +12,7 @@ This is my repo full of code problems that I have completed prior to or during a
 * [Stack](https://github.com/blakeembrey/code-problems/tree/master/problems/stack)
 * [Queue](https://github.com/blakeembrey/code-problems/tree/master/problems/queue)
 * [Linked List](https://github.com/blakeembrey/code-problems/tree/master/problems/linked-list)
-* [Binary Search Tree Check](https://github.com/blakeembrey/code-problems/tree/master/problems/binary-search-tree-check) *Not an implementation, checks for a valid implementation*
+* [Binary Search Tree Check](https://github.com/blakeembrey/code-problems/tree/master/problems/binary-search-tree-check) *(Not an implementation; it checks for a valid implementation)*
 
 ### DOM-based Solutions
 * [Get Elements By Class Name](https://github.com/blakeembrey/code-problems/tree/master/problems/get-elements-by-class-name)
