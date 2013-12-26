@@ -1,11 +1,11 @@
-module.exports = function (number, array) {
+module.exports = function (array, number) {
   return (function searchNumber (left, right) {
     var center = left + Math.floor((right - left) / 2);
 
-    // Once the numbers match, return the center index.
+    // If the numbers match, return the center index.
     if (array[center] === number) { return center; }
 
-    // If the left is the same as the center position, return -1.
+    // If the left position is the same as the center position, return -1.
     if (left === center) { return -1; }
 
     // When the current number is larger than the search input, recurse
