@@ -6,8 +6,9 @@
   "main": null,
   "dependencies": {},
   "devDependencies": {
-    "mocha": "~1.11.0",
-    "jshint": "~2.1.3"
+    "mocha": "~1.16.2",
+    "jshint": "~2.4.0",
+    "chai": "~1.8.1"
   },
   "scripts": {
     "test": "jshint solutions/javascript && mocha tests/javascript"
