@@ -1,9 +1,9 @@
-module.exports = function searchArray (n, array) {
+module.exports = function searchArray (array, num) {
   var index = 0;
 
   // Increment the index by doubling until we pass the search number.
-  while (index in array && array[index] <= n) {
-    if (array[index] === n) {
+  while (index in array && array[index] <= num) {
+    if (array[index] === num) {
       return index;
     }
 
@@ -16,8 +16,8 @@ module.exports = function searchArray (n, array) {
   if (index < 2) { return -1; }
 
   // Track the found index so we can continue to return `-1` down the stack.
-  var foundIndex = searchArray(n, array.slice(index / 2, index));
+  var foundIndex = searchArray(array.slice(index / 2, index), num);
 
-  // return `-1` or old index plus new found index.
-  return ~foundIndex ? (index / 2) + foundIndex : -1;
+  // Return `-1` or old index plus new found index.
+  return foundIndex > -1 ? (index / 2) + foundIndex : -1;
 };
