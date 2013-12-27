@@ -1,7 +1,8 @@
 <?php
-    $input = preg_replace('/\s+/', ' ', trim($argv[1]));
-    $explodedString = explode(' ',$input);
-    $explodedString = array_reverse($explodedString);
-    $output = implode($explodedString,' ');
-    echo $output;
+
+function reverseWordsInStrings($string)
+{
+    return implode(array_reverse(preg_split('/\s+/', $string)), ' ');
+}
+
 ?>
