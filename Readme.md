@@ -10,6 +10,7 @@ This is my repo full of code problems that I have completed prior to or during a
 * [Bubble Sort](https://github.com/blakeembrey/code-problems/tree/master/problems/bubble-sort)
 * [Merge Sort](https://github.com/blakeembrey/code-problems/tree/master/problems/merge-sort)
 * [Selection Sort](https://github.com/blakeembrey/code-problems/tree/master/problems/selection-sort)
+* [Insertion Sort](https://github.com/blakeembrey/code-problems/tree/master/problems/insertion-sort)
 
 ### Data Structures
 
