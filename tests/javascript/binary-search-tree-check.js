@@ -77,7 +77,7 @@ var failDuplicate = {
   }
 };
 
-var bstfalse = {
+var bstFalse = {
   value: 3,
   left: {
     value: 2,
@@ -109,7 +109,7 @@ describe('binary search tree check', function () {
     assert.ok(!isBST(failDuplicate));
   });
 
-  it('should fail with bstfalse', function () {
-    assert.ok(!isBST(bstfalse));
+  it('should fail with bstFalse', function () {
+    assert.ok(!isBST(bstFalse));
   });
 });
