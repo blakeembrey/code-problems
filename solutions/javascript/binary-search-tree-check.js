@@ -1,27 +1,29 @@
-//METHOD 4(Using In-Order Traversal) 
-//reference: http://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/
+//Method 4(Using In-Order Traversal) 
+//Reference: 
+// http://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/
 module.exports = function(bst) {
-  if (!bst || bst.value === null) {
-    return false;
-  }
+	if (!bst || bst.value == null) {
+		return false;
+	}
 
-  var prev;
+	var prev;
 
-  return (function isBst(root) {
-    if ( !! root) {
-      if (!isBst(root.left)) {
-        return false;
-      }
+	return (function isBst(root) {
+		if (!root) {
+			return true;
+		}
 
-      if (prev && prev.value >= root.value) {
-        return false;
-      }
+		if (!isBst(root.left)) {
+			return false;
+		}
 
-      prev = root;
+		if (prev && prev.value >= root.value) {
+			return false;
+		}
 
-      return isBst(root.right);
-    }
+		prev = root;
 
-    return true;
-  })(bst);
+		return isBst(root.right);
+
+	})(bst);
 };
