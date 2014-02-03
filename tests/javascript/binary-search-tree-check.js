@@ -87,9 +87,7 @@ var bstFalse = {
   },
   right: {
     value: 5
-
   }
-
 };
 
 describe('binary search tree check', function () {
