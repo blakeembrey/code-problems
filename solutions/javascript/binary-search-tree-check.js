@@ -1,31 +1,29 @@
-module.exports = function (bst) {
-  // Return early if the tree does not exist.
+//Method 4 (Using In-Order Traversal) 
+//Reference: 
+// http://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/
+module.exports = function(bst) {
   if (!bst || bst.value == null) {
     return false;
   }
 
-  // Keep track of encountered nodes.
-  var nodes = {};
+  var prev;
 
-  return (function isBST (bst) {
-    if (bst.value == null || nodes[bst.value]) {
+  return (function isBst(root) {
+    if (!root) {
+      return true;
+    }
+
+    if (!isBst(root.left)) {
       return false;
     }
 
-    // Add the current value to the nodes object.
-    nodes[bst.value] = true;
-
-    // The left value should be smaller than the current value.
-    if (bst.left && bst.left.value > bst.value) {
+    if (prev && prev.value >= root.value) {
       return false;
     }
 
-    // The right value should be larger than the current value.
-    if (bst.right && bst.right.value < bst.value) {
-      return false;
-    }
+    prev = root;
 
-    // Check if we have each side and that each side is valid.
-    return (!bst.left || isBST(bst.left)) && (!bst.right || isBST(bst.right));
+    return isBst(root.right);
+
   })(bst);
 };
