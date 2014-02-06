@@ -27,6 +27,8 @@ addSubNode = function(node, direct, num) {
 };
 
 add = function(num) {
+  // Add the value to the correct side of the binary search tree. 
+  // If the value is the same as the current node, we'll just ignore it.
   if (this.value === undefined) {
     this.value = num;
   } else {
@@ -37,7 +39,6 @@ add = function(num) {
     }
   }
 
-  //always return root
   return root;
 };
 
@@ -61,7 +62,7 @@ findRightMost = function(node) {
 };
 
 replaceNodeInParent = function(node,parent, newNode) {
-  //root's parent is undefined.
+  // root's parent is undefined.
   if (parent === undefined) {
     root = newNode;
     return;
@@ -83,7 +84,7 @@ binaryTreeDelete = function(num, parent) {
   } else if (num > this.value) {
     return this.right ? this.right.delete(num, this) : root;
   } else {
-    //delete key here
+    // delete key here
     if (this.left !== undefined && this.right !== undefined) {
       console.log(this.left);
       successor = findRightMost(this.left);
@@ -94,7 +95,7 @@ binaryTreeDelete = function(num, parent) {
     } else if (this.right) {
       replaceNodeInParent(this, parent, this.right);
     } else {
-      replaceNodeInParent(this, parent); //replace with undefined
+      replaceNodeInParent(this, parent); // replace with undefined
     }
   }
   return root;
