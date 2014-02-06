@@ -38,7 +38,6 @@ add = function(num) {
       addSubNode(this, 'right', num);
     }
   }
-
   return root;
 };
 
@@ -61,10 +60,16 @@ findRightMost = function(node) {
   return findRightMost(node.right);
 };
 
-replaceNodeInParent = function(node,parent, newNode) {
+replaceNodeInParent = function(node, parent, newNode) {
   // root's parent is undefined.
   if (parent === undefined) {
-    root = newNode;
+    if (newNode) {
+      root.value = newNode.value,
+      root.left = newNode.left,
+      root.right = newNode.right;
+    }else{
+      root.value=undefined;
+    }
     return;
   }
 
@@ -78,7 +83,6 @@ replaceNodeInParent = function(node,parent, newNode) {
 
 binaryTreeDelete = function(num, parent) {
   var successor;
-
   if (num < this.value) {
     return this.left ? this.left.delete(num, this) : root;
   } else if (num > this.value) {
@@ -86,7 +90,6 @@ binaryTreeDelete = function(num, parent) {
   } else {
     // delete key here
     if (this.left !== undefined && this.right !== undefined) {
-      console.log(this.left);
       successor = findRightMost(this.left);
       this.value = successor.value;
       this.left.delete(successor.value, this);
