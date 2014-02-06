@@ -25,7 +25,6 @@ var jsonify = function(object) {
 
 var expect;
 
-
 describe('binary search tree', function() {
   it('root should pass a valid binary search tree', function() {
     expect = node(50,
@@ -75,7 +74,6 @@ describe('binary search tree', function() {
     searchResult = root.search(125);
     assert.ok(!searchResult);
 
-
     searchExpect = node(7, node(6));
     searchResult = root.search(7); // if existed
     assert.deepEqual(jsonify(searchResult), jsonify(searchExpect));
@@ -91,32 +89,25 @@ describe('binary search tree', function() {
   });
 
   it('delete root', function() {
-    var searchExpect;
+    var rootExpect;
 
     root.delete(50);
-    searchExpect = node(10, node(8, node(7, node(6))),
+    rootExpect = node(10, node(8, node(7, node(6))),
       node(100, undefined, node(150, undefined, node(175))));
-    assert.deepEqual(jsonify(root), jsonify(searchExpect));
+    assert.deepEqual(jsonify(root), jsonify(rootExpect));
 
     //remove left sub tree
     root.delete(10).delete(8).delete(7).delete(6);
-    searchExpect = node(100, undefined, node(150, undefined, node(175)));
-    assert.deepEqual(jsonify(root), jsonify(searchExpect));
+    rootExpect = node(100, undefined, node(150, undefined, node(175)));
+    assert.deepEqual(jsonify(root), jsonify(rootExpect));
 
     //remove right sub tree
     root.delete(175).delete(150).add(6).add(5).add(8).add(7).delete(100);
-    searchExpect = node(6, node(5), node(8, node(7)));
-    assert.deepEqual(jsonify(root), jsonify(searchExpect));
+    rootExpect = node(6, node(5), node(8, node(7)));
+    assert.deepEqual(jsonify(root), jsonify(rootExpect));
 
     //remove every node.
     root.delete(6).delete(5).delete(8).delete(7);
-
     assert.equal(undefined, root.value);
-
-
-
   });
-
-
-
 });
