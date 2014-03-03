@@ -1,7 +1,7 @@
-module.exports = function(value, precision) {
+module.exports = function (value, precision) {
   var suffixes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
-  var factor = Math.pow(10, precision > 0 ? precision : 2);
-  var suffix = 0;
+  var factor   = Math.pow(10, precision > 0 ? precision : 2);
+  var suffix   = 0;
 
   while (value >= 1024 && suffixes[++suffix] && suffix < suffixes.length) {
     value /= 1024;
