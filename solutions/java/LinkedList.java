@@ -1,4 +1,7 @@
 //very basic, likely bug prone singly linked list v1
+import java.util.*;
+
+
 public class LinkedList {
 	private Node first;
 
@@ -24,6 +27,22 @@ public class LinkedList {
 		current.next = end;
 	}
 
+	public void removeDuplicates() {
+		Hashtable<Integer, Boolean> ht = new Hashtable<Integer, Boolean>();
+
+		if (first == null || first.next == null) {return;}
+		Node current = first;
+		Node prev = null;
+		while (current != null) {
+			if (ht.containsKey(current.data)) {
+				prev.next = current.next;
+			} else {
+				ht.put(current.data, true);
+				prev = current;
+			}
+			current = current.next;
+		}
+	}
 	public void printList() {
 		Node current = first;
 		if (first == null) {
@@ -42,6 +61,7 @@ public class LinkedList {
 		System.out.println(sb.toString());
 	}
 
+	// Test Client
 	public static void main(String[] args) {
 		LinkedList ll = new LinkedList();
 
@@ -49,7 +69,17 @@ public class LinkedList {
 		ll.appendToTail(2);
 		ll.appendToTail(3);
 		ll.appendToTail(4);
+		ll.appendToTail(5);	
+
 		ll.appendToTail(5);
+		ll.appendToTail(5);
+		ll.appendToTail(5);
+		ll.appendToTail(5);
+
+
+		ll.printList();
+
+		ll.removeDuplicates();
 		ll.printList();
 	}
 }
