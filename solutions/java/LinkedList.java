@@ -1,4 +1,4 @@
-//very basic, likely bug prone singly linked list v1
+//basic, singly linked list v1
 import java.util.*;
 
 
@@ -43,6 +43,23 @@ public class LinkedList {
 			current = current.next;
 		}
 	}
+
+	public int findKtoLastElement(int k) {
+		Node current = first;
+		Node runner = current;
+		for(int i = 0; i < k; i++) {
+			if (runner.next == null) {
+				return runner.data;
+			}
+			runner = runner.next;
+		}
+		while (runner != null) {
+			runner = runner.next;
+			current = current.next;
+		}
+		return current.data;
+	}
+
 	public void printList() {
 		Node current = first;
 		if (first == null) {
@@ -81,6 +98,8 @@ public class LinkedList {
 
 		ll.removeDuplicates();
 		ll.printList();
+
+		System.out.println("the 3 rd to last element is " + ll.findKtoLastElement(3));
 	}
 }
 
