@@ -44,12 +44,13 @@ public class LinkedList {
 		}
 	}
 
+	// find kth to last or if that doesnt exist, the first element
 	public int findKtoLastElement(int k) {
 		Node current = first;
 		Node runner = current;
 		for(int i = 0; i < k; i++) {
 			if (runner.next == null) {
-				return runner.data;
+				return current.data;
 			}
 			runner = runner.next;
 		}
