@@ -20,12 +20,10 @@ function isBalancedBrackets($str){
 		for ($i=0; $i < $strLength; $i++) { 
 			//Current single character
 			$currentStr = $str[$i];
-			if(in_array($currentStr, $brackets) || in_array($currentStr, array_keys($brackets))){
-				if($brackets[end($stackArray)] == $currentStr){
-					array_pop($stackArray);
-				}else{
-					array_push($stackArray, $currentStr);
-				}
+			if($brackets[end($stackArray)] == $currentStr){
+				array_pop($stackArray);
+			}else{
+				array_push($stackArray, $currentStr);
 			}
 		}
 	}
@@ -33,8 +31,7 @@ function isBalancedBrackets($str){
 }
 
 var_dump(isBalancedBrackets('(){}[]'));
-var_dump(isBalancedBrackets('(ABC)sd{bcs}[]'));
 var_dump(isBalancedBrackets('()[]{}(([])){[()][]}'));
-var_dump(isBalancedBrackets('(bx))[]{}'));
+var_dump(isBalancedBrackets('())[]{}'));
 var_dump(isBalancedBrackets('[(])'));
-var_dump(isBalancedBrackets('([[abc(45)cd]])'));
+var_dump(isBalancedBrackets('([[()]])'));
