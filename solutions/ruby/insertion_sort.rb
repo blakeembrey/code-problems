@@ -6,9 +6,12 @@ def insertion_sort(arr)
         tmp = arr[j-1]
         arr[j-1] = arr[j]
         arr[j] = tmp
+        j -= 1
+      else
+        j = 0
       end
-      j -= 1
     end
   end
   arr
 end
+
