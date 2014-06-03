@@ -22,3 +22,8 @@ def factorial_recursive(num):
         return 1
 
     return num * factorial_recursive(num -1)
+
+def factorial_recursive2(num):
+    """returns the factorial of num using a slightly shorter recursive method."""
+    return num if num == 1 else num * factorial_recursive2(num -  1)
+
