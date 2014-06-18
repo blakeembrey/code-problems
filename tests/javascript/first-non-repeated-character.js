@@ -1,4 +1,4 @@
-var assert        = require('assert');
+var assert       = require('assert');
 var nonRepeating = require('../../solutions/javascript/first-non-repeated-character');
 
 describe('first-non-repeated-character', function () {
