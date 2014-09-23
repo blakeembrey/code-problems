@@ -1,4 +1,4 @@
-
+/* Uses Inorder traversal. Only works on unique element BT */
 public class BinarySearchTreeCheck {
 	Node root;
 
