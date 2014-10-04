@@ -1,5 +1,10 @@
 public class NextHighestNumber {
-
+	/***
+	 * Convert int into character array. Starting from the end, compare each
+	 * number with all numbers before it, one at a time. At any moment we find a
+	 * number greater than any of its previous numbers, we swap them, and return
+	 * the converted int.
+	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		NextHighestNumber nhn = new NextHighestNumber();
