@@ -6,5 +6,5 @@ def balanced_brackets(str)
     if brackets[c] then arr << c 
     else return false if arr.size < 1 || (brackets.key(c) != arr.pop) end
   end
-  arr.size == 0 ? true : false
+  arr.empty?
 end
