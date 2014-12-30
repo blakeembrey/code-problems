@@ -5,9 +5,14 @@ module.exports = function quickSort(input, compare) {
       greater = [],
       pivot;
 
-  // Not an array, empty or array of 1 is already sorted
-  if (!Array.isArray(input) || input.length < 2) {
-    return input;
+  if (!Array.isArray(input)) {
+    throw new Error('Can only sort arrays.');
+  }
+
+  var array = input.slice(0); // make a copy of the array
+
+  if (array.length < 2) {
+    return array;
   }
 
   // Create a compare func if not passed in
@@ -16,8 +21,6 @@ module.exports = function quickSort(input, compare) {
       return a > b ? 1 : -1;
     };
   }
-
-  var array = input.slice(0); // make a copy of the array
 
   // Get our pivot, this can be random
   pivot = array.splice(~~(Math.random() * array.length), 1);

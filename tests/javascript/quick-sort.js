@@ -5,6 +5,17 @@ var quickSort = require('../../solutions/javascript/quick-sort');
 
 describe('Quick Sort', function(){
 
+  it('throws error if input not an array', function() {
+
+    try {
+      quickSort(null);
+    } catch (err) {
+      return;
+    }
+
+    assert(false, 'Expected exception to be thrown.');
+  });
+
   it('handles empty list', function() {
     var results = quickSort([]);
     assert(Array.isArray(results), 'Expected result to be array');
