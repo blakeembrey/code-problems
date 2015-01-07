@@ -1,10 +1,17 @@
-module.exports = function quickSort (array, compare) {
+'use strict';
+
+module.exports = function quickSort(input, compare) {
   var lesser  = [],
       greater = [],
       pivot;
 
-  // Not an array, empty or array of 1 is already sorted
-  if (!Array.isArray(array) || array.length < 2) {
+  if (!Array.isArray(input)) {
+    throw new Error('Can only sort arrays.');
+  }
+
+  var array = input.slice(0); // make a copy of the array
+
+  if (array.length < 2) {
     return array;
   }
 
