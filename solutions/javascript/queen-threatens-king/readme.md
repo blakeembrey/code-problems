@@ -1,4 +1,4 @@
-Visualizing the different ways the Queen and the King can be located relative to each other should help solve the problem. As the Queen can only move horizontally, vertically or diagonally it should be easy to notice that the King is always threatened by the Queen if they are located in the same row (horizontally aligned) or column (vertically aligned):
+Visualizing the different ways the Queen and the King can be located relative to each other should help solve the problem. As the Queen can only move horizontally, vertically or diagonally (45°) it should be easy to deduce that the King is always threatened by the Queen if they are located in the same row (horizontally aligned) or column (vertically aligned):
 
 ![The Queen and the King are in the same row](queen-threatens-king-solution-horizontal.png)
 ![The Queen and the King are in the same column](queen-threatens-king-solution-vertical.png)

@@ -12,4 +12,4 @@ function threatens(qX, qY, kX, kY) {
 
 Extra: how would you modify your solution if the rest of the chessmen were included in the board?
 
-If you are not familiar with the rules of chess, please refer to to the [related Wikipedia page](http://en.wikipedia.org/wiki/Queen_(chess)) to learn how the Queen can move around the chess board and threaten other chessmen.
+If you are not familiar with the rules of chess, please refer to the [related Wikipedia page](http://en.wikipedia.org/wiki/Queen_(chess)) to learn how the Queen can move around the chess board and threaten other chessmen.
