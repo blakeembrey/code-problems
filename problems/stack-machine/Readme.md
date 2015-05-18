@@ -1,4 +1,4 @@
-# Game Of Life
+# Stack Machine
 
 A stack machine is a simple system that performs arithmetic operations on an input string of numbers and operators. It contains a stack that can store an arbitrary number of 12-bit unsigned integers. Initially the stack is empty. The machine processes a string of characters in the following way:
 
