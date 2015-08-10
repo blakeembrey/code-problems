@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Stack;
 
 /**
@@ -9,14 +10,21 @@ import java.util.Stack;
  * 
  * Another solution is to compromise of the space complexity a little, and make
  * use of a stack as below.
+ * 
+ * Addition: We could also use a HashMap to record the rank of each character
+ * in the combined string and check the two input strings as below.  
  */
 public class CombineTwoStrings {
 	public static void main(String[] args) {
 		CombineTwoStrings cts = new CombineTwoStrings();
 		String one = "rohit";
 		String two = "deepthi";
+		String three = "viveka";
 		String combined = "rodehepitht";
-		System.out.print(cts.isValid(one, two, combined));
+		String combined2 = "rviovehkiat";
+		System.out.println(cts.isValid(one, two, combined));
+		System.out.println(cts.isValidTwo(one, three, combined2));
+
 	}
 
 	public boolean isValid(String one, String two, String combined) {
@@ -35,6 +43,30 @@ public class CombineTwoStrings {
 				oneIndex++;
 			else if (comparer == two.charAt(twoIndex))
 				twoIndex++;
+			else
+				return false;
+		}
+		return true;
+	}
+	
+	// Used a hashMap to save the rank of each character in the combined string. 
+	// Incrementing the pointer of respective string as per the rank in the 
+	// combined string.
+	public boolean isValidTwo(String one, String two, String combined) {
+		if(one.length() + two.length() != combined.length())
+			return false;
+		HashMap<Integer, Character> map = new HashMap<>();
+		int key = 0, p1 = 0, p2 = 0, pT = 0;
+		for(Character i : combined.toCharArray()) {
+			map.put(key++, i);
+		}
+		
+		while(p1 <= one.length() - 1 && p2 <= two.length() - 1 && pT <= combined.length() - 1) {
+			char temp = map.get(pT++);
+			if(one.charAt(p1) == temp)
+				p1++;
+			else if (two.charAt(p2) == temp)
+				p2++;
 			else
 				return false;
 		}
