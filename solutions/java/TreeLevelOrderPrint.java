@@ -4,7 +4,7 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class treelevelorderprint {
+public class TreeLevelOrderPrint {
 	node root;
 	class node {
 		Integer value;
@@ -19,7 +19,7 @@ public class treelevelorderprint {
 		}
 	}
 	
-	public treelevelorderprint() {
+	public TreeLevelOrderPrint() {
 		root = new node();
 	}
 	
@@ -72,7 +72,7 @@ public class treelevelorderprint {
 	}
 	
 	public static void main(String[] args) {
-		treelevelorderprint tree = new treelevelorderprint();
+		TreeLevelOrderPrint tree = new TreeLevelOrderPrint();
 		for (int i = 0; i <= 10; i++) {
 			tree.addToTree(i);
 		}
