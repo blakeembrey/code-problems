@@ -8,6 +8,11 @@ public class ConvertArray {
 	}
 	
 	public int[] convert(int[] input) {
+	  // When array size is less than 3, returns an error.
+	  if (input.length % 3 != 0 ) {
+			System.out.println("Error! Array cannot be divided into three equal parts");
+			return;
+		}
 		for (int i = 0; i < input.length; ++i) {
 			int originalIndex = getOriginalIndex(i, input.length/3);
 			while (originalIndex < i) {
