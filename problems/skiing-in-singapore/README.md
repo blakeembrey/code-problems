@@ -1,5 +1,5 @@
 # Skiing in Singapore
-I came across this programming excercise from redmart that caught my interest. At the same time im in the midst of the harvard's cs50 course which i took through edx as a refresher. So I thought of taking up the programming excercise challenge and try to implement it using c. So without further ado, the challenge description goes like this:
+I came across this programming exercise from redmart that caught my interest. At the same time im in the midst of the harvard's cs50 course which i took through edx as a refresher. So I thought of taking up the programming exercise challenge and try to implement it using c. So without further ado, the challenge description goes like this:
 
 ====================
 
