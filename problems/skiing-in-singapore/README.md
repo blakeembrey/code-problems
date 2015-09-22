@@ -1,8 +1,4 @@
 # Skiing in Singapore
-I came across this programming exercise from redmart that caught my interest. At the same time im in the midst of the harvard's cs50 course which i took through edx as a refresher. So I thought of taking up the programming exercise challenge and try to implement it using c. So without further ado, the challenge description goes like this:
-
-====================
-
 Sometimes it's nice to take a break and code up a solution to a small, fun problem. Here is one some of our engineers enjoyed recently called Skiing In Singapore.
 
 Well you can’t really ski in Singapore. But let’s say you hopped on a flight to the Niseko ski resort in Japan. Being a software engineer you can’t help but value efficiency, so naturally you want to ski as long as possible and as fast as possible without having to ride back up on the ski lift. So you take a look at the map of the mountain and try to find the longest ski run down.
