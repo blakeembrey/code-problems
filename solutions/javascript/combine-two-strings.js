@@ -1,20 +1,37 @@
-module.exports = function (str1, str2, combined) {
-  // Generate all the posible paths between `str1` and `str2`
-  var paths = {};
-
-  // Check the string lengths are the same to begin
-  if ((str1 + str2).length !== combined.length) {
+module.exports = function combineTwoStrings (str1, str2, str3) {
+  // Simple optimisation to break when impossible.
+  if ((str1.length + str2.length) !== str3.length) {
     return false;
   }
 
-  // Finding paths is essentially the anagrams solution
-  (function findPath (str1, str2, path) {
-    if (path.length === combined.length) { return paths[path] = true; }
-
-    // Find the next path from the first character of either strings
-    str1 && findPath(str1.substr(1), str2, path + str1.substr(0, 1));
-    str2 && findPath(str1, str2.substr(1), path + str2.substr(0, 1));
-  })(str1, str2, '');
-
-  return combined in paths;
+  return isCombineTwoStrings(str1, str2, str3);
 };
+
+function isCombineTwoStrings (str1, str2, str3) {
+  // No more solutions to find.
+  if (str3.length === 0) {
+    return true;
+  }
+
+  var newStr3 = str3.substr(1);
+
+  // Path for when the first string matches.
+  if (str1[0] === str3[0]) {
+    // When both paths are possible, we implement a simple backtracking
+    // mechanism for when the first was wrong. E.g. `aac`, `aab`, `aaacab`.
+    if (str2[0] === str3[0]) {
+      return isCombineTwoStrings(str1.substr(1), str2, newStr3) ||
+        isCombineTwoStrings(str1, str2.substr(1), newStr3);
+    }
+
+    return isCombineTwoStrings(str1.substr(1), str2, newStr3);
+  }
+
+  // Path for when the second string matches.
+  if (str2[0] === str3[0]) {
+    return isCombineTwoStrings(str1, str2.substr(1), newStr3);
+  }
+
+  // When neither path is possible, the combination is `false`.
+  return false;
+}
