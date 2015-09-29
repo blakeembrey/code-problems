@@ -10,7 +10,7 @@ module.exports = function arraypairsum (k, array) {
     var len = hash[diff];
 
     while (len--) {
-      pairs.push([number, diff]);
+      pairs.push([diff, number]);
     }
 
     hash[number] = (hash[number] + 1) || 1;
