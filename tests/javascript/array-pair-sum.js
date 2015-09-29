@@ -7,10 +7,10 @@ describe('Array Pair Sum', function () {
   });
 
   it('should not output duplicate results', function () {
-    expect(arrayPairSum(8, [3, 4, 5, 4, 4])).to.eql([[3, 5], [4, 4]]);
+    expect(arrayPairSum(8, [3, 4, 5, 4, 4])).to.eql([[3, 5], [4, 4], [4, 4], [4, 4]]);
   });
 
-  it('should only allow distinct elements', function () {
-    expect(arrayPairSum(4, [1, 1, 2, 3, 4])).to.eql([[1, 3]]);
-  });
+  it('should work not find any matches', function () {
+    expect(arrayPairSum(10, [3, 5, 6, 8])).to.eql([]);
+  })
 });
