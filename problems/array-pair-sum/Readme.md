@@ -7,8 +7,9 @@ Given an integer array, output all distinct pairs that sum up to a specific valu
 ## Example
 
 ```
-f(10, [3, 4, 5, 6, 7]) // [ [6, 4], [7, 3] ]
-f(8, [3, 4, 5, 4, 4]) // [ [3, 5], [4, 4] ]
+f(10, [3, 4, 5, 6, 7]) // [ [4, 6], [3, 7] ]
+f(8, [3, 4, 5, 4, 4]) // [ [3, 5], [4, 4], [4, 4], [4, 4] ]
+f(10, [3, 5, 6, 8]) // []
 ```
 
 ## Source
