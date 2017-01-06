@@ -1,19 +1,19 @@
-module.exports = function (k, array) {
-  var hash  = {},
-      pairs = [];
+module.exports = function arraypairsum (k, array) {
+  var hash = {};
+  var pairs = [];
 
-  // Loop through the array once, storing the results in an object for a
-  // time complexity of O(n) - the naive solution consists of two for loops
-  // which results in a complexity of O(n^2)
+  // Iterate over the array, tracking the times each number appears. For each
+  // new number, we calculate the difference to `k` and look up the number of
+  // times that number has been seen and push those occurances in pairs output.
   array.forEach(function (number) {
-    // Make sure the value in unused and it's a unique pair
-    if (hash[k - number] === false && k - number !== number) {
-      pairs.push([number, k - number]);
-      hash[k - number] = true; // Set it to "used"
+    var diff = k - number;
+    var len = hash[diff];
+
+    while (len--) {
+      pairs.push([diff, number]);
     }
 
-    // If the hash value is not true, set the hash to "unused"
-    !hash[k - number] && (hash[number] = false);
+    hash[number] = (hash[number] + 1) || 1;
   });
 
   return pairs;

@@ -33,3 +33,7 @@ This is my repo full of code problems that I have completed prior to or during a
 npm install # Installs `mocha` and any other dependencies needed to run
 npm test    # Runs the testing scripts
 ```
+
+## Contributing
+
+If you have a problem or solution that's not currently not included, please open an issue or pull request! If you're including new content, please make sure you have permission to publish the content you are adding. Under no circumstance should you copy problems online without a visible license or attributions, or from coding interview websites such as [Codility](https://codility.com/).
