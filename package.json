@@ -1,17 +1,14 @@
 {
   "name": "code-problems",
-  "version": null,
   "private": true,
   "description": "Repository full of code problems and common solutions.",
-  "main": null,
   "dependencies": {},
   "devDependencies": {
-    "mocha": "~1.16.2",
-    "jshint": "~2.4.0",
-    "chai": "~1.8.1"
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
   },
   "scripts": {
-    "test": "jshint solutions/javascript && mocha tests/javascript"
+    "test": "mocha tests/javascript"
   },
   "repository": {
     "type": "git",
