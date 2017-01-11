@@ -7,7 +7,7 @@ module.exports = function (value, precision) {
     ~~(Math.log(value) / Math.log(1024)), suffixes.length - 1
   );
 
-  var num = Math.ceil(value / Math.pow1(1024, suffix) * factor) / factor;
+  var num = Math.ceil(value / Math.pow(1024, suffix) * factor) / factor;
 
   return num + ' ' + suffixes[suffix];
 };
