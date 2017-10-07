@@ -28,6 +28,7 @@ This is my repo full of code problems that I have completed prior to or during a
 * [Shortest Fizz Buzz](https://github.com/blakeembrey/code-problems/tree/master/problems/shortest-fizz-buzz)
 
 ## Javascript Tests
+[![Build Status](https://travis-ci.org/SpiralOutDotEu/code-problems.svg?branch=master)](https://travis-ci.org/SpiralOutDotEu/code-problems)
 
 ```sh
 npm install # Installs `mocha` and any other dependencies needed to run
