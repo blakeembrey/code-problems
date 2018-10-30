@@ -17,3 +17,10 @@ def getSumOfMultiples(multiples, limit):
       result += sign * getSumOfMultiple(reduce(mul, x, 1), limit)
     sign *= -1
   return result
+  
+def getSumOfMultiples():
+  count=0
+  for i in range(1000):
+    if i%3==0 or i%5==0:
+      count+=i
+  return count
