@@ -1,8 +1,7 @@
 {
   "name": "code-problems",
   "private": true,
-  "description": "Repository full of code problems and common solutions.",
-  "dependencies": {},
+  "description": "Repository full of code problems and common solutions",
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^3.2.0"
